@@ -28,7 +28,7 @@ import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
 public class WebViewer extends AppCompatActivity {
 
     //Variable para actualizar
-    private SwipeRefreshLayout swipeContainer;
+   // private SwipeRefreshLayout swipeContainer;
     //Variable Web view
     private WebView WebView;
 

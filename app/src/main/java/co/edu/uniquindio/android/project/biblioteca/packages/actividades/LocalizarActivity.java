@@ -1,7 +1,8 @@
 package co.edu.uniquindio.android.project.biblioteca.packages.actividades;
 
-import android.app.Activity;
+
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -13,7 +14,7 @@ import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
  * Created by sebastian on 5/05/17.
  */
 
-public class LocalizarActivity extends Activity {
+public class LocalizarActivity extends AppCompatActivity {
 
 
 
@@ -23,11 +24,12 @@ public class LocalizarActivity extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_localizar);
+        getSupportActionBar().setTitle(R.string.localizar_libro);
+       back();
 
 
-
-        Button boto=(Button) findViewById(R.id.button_Buscar);
-      boto.setOnClickListener(new View.OnClickListener() {
+        Button boton=(Button) findViewById(R.id.button_Buscar);
+      boton.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
               ImageView im=(ImageView) findViewById(R.id.im);
@@ -44,7 +46,7 @@ public class LocalizarActivity extends Activity {
         /**
 
 
-        localizar tabla = new localizar(this, (TableLayout)findViewById(R.id.tabla));
+         Localizar tabla = new Localizar(this, (TableLayout)findViewById(R.id.tabla));
 
         for(int i = 0; i < 15; i++)
         {
@@ -57,12 +59,26 @@ public class LocalizarActivity extends Activity {
         }
          */
 
-
-
-
-
     }
 
+    /**
+     * accion atras en toolbar
+     */
 
+    private void back() {
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+    }
+
+    /**
+     * accion atras en toolbar
+     * @return boolean
+     */
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return false;
+    }
 
 }

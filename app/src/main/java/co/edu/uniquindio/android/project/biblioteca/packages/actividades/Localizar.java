@@ -17,7 +17,7 @@ import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
  * Created by sebastian on 5/05/17.
  */
 
-public class localizar{
+public class Localizar {
 
     private TableLayout tabla; // Layout donde se pintará la tabla
     private ArrayList<TableRow> filas; // Array de las filas de la tabla
@@ -32,7 +32,7 @@ public class localizar{
      * @param actividad Actividad donde va a estar la tabla
      * @param tabla TableLayout donde se pintará la tabla
      */
-    public localizar(Activity actividad, TableLayout tabla)
+    public Localizar(Activity actividad, TableLayout tabla)
     {
         this.actividad = actividad;
         this.tabla = tabla;

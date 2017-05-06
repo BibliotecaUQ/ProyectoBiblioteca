@@ -11,6 +11,7 @@ buildscript {
     }
 }
 
+
 plugins {
     id "org.sonarqube" version "2.4-rc1"
 }
@@ -26,6 +27,7 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
 
 sonarqube {
     properties {

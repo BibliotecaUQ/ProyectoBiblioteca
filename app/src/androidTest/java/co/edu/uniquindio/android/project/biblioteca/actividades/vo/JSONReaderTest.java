@@ -1,4 +1,4 @@
-package co.edu.uniquindio.android.electiva.practicanavegationdrawer.actividades.vo;
+package co.edu.uniquindio.android.project.biblioteca.actividades.vo;
 
 import android.util.JsonReader;
 
@@ -6,8 +6,6 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by Pc on 14/04/2017.

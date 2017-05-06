@@ -1,13 +1,15 @@
-package co.edu.uniquindio.android.electiva.practicanavegationdrawer.actividades.actividades;
+package co.edu.uniquindio.android.project.biblioteca.actividades.actividades;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.support.test.runner.AndroidJUnit4;
 import android.util.JsonReader;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -20,11 +22,12 @@ import java.net.URLConnection;
 import java.util.List;
 
 import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
-import co.edu.uniquindio.android.electiva.practicanavegationdrawer.actividades.vo.JSONReaderTest;
+import co.edu.uniquindio.android.project.biblioteca.actividades.vo.JSONReaderTest;
 
 /**
  * Created by Pc on 14/04/2017.
  */
+@RunWith(AndroidJUnit4.class)
 public class JSONParseTest extends AsyncTask<String, String, JsonReader> {
 
     private static String urljson = "https://bibliotecauq.github.io/data.json";

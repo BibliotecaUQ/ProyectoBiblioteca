@@ -84,10 +84,10 @@ public class NavegationActivity extends AppCompatActivity {
             desc = (TextView) findViewById(R.id.descripcion_evento);
             img = (ImageView) findViewById(R.id.image_evento);
 
-            Toast toast = Toast.makeText(getApplicationContext(), "No es posible actualizar", Toast.LENGTH_LONG);
+          //  Toast toast = Toast.makeText(getApplicationContext(), "No es posible actualizar", Toast.LENGTH_LONG);
             // toast.show();
             Toast toast2 = Toast.makeText(getApplicationContext(), "No tienes conexión a internet", Toast.LENGTH_LONG);
-            //toast2.show();
+            toast2.show();
 
             mens.setText("Bienvenidos a la aplicación móvil paseo virtual CRAI");
             desc.setText("No tienes conexión a internet, prueba la opción actualizar del menú");
@@ -121,7 +121,7 @@ public class NavegationActivity extends AppCompatActivity {
              */
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
-                Fragment f = null;
+                //Fragment f = null;
                 switch (item.getItemId()) {
                     case R.id.menu_seccion_1:
                         //remplazarFragmentohome(new HomeFragment());
@@ -160,7 +160,7 @@ public class NavegationActivity extends AppCompatActivity {
 
                     case R.id.menu_opcion_3:
                         //Sale de la activity principal
-                        Intent salida = new Intent(Intent.ACTION_MAIN);
+                       //Intent salida = new Intent(Intent.ACTION_MAIN);
                         finish();
 
                         break;

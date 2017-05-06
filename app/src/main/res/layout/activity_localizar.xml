@@ -4,62 +4,61 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!--
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="7dp"
+            android:layout_marginTop="7dp"
+            android:textSize="@dimen/detalle_texto_nombre"
+            android:text="Ingrese el código del libro"/>
+    -->
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/codigo_libro_a_buscar"
+            android:inputType="text"
+            android:imeOptions="actionSend"
+            android:backgroundTint="@color/colorPrimary"/>
 
-    <TextView
-        android:id="@+id/titulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="7dp"
-        android:layout_marginTop="7dp"
-        android:textSize="@dimen/detalle_texto_nombre"
-        android:text="Ingrese el código del libro"/>
-
-    <EditText
-        android:id="@+id/search"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:hint="codigo"
-        android:inputType="text"
-        android:imeOptions="actionSend" />
-
-    <Button
-        android:id="@+id/button_Buscar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Buscar" />
+        <Button
+            android:id="@+id/button_Buscar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/boton_buscar_libro"
+            android:textSize="8pt"
+            android:textColor="@color/colorPrimaryLight"
+            android:background="@color/colorButton"/>
 
 
-
-
-
-
-
-    <ScrollView
-        android:id="@+id/scrollvertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="vertical"
-        android:layout_weight="1">
-
-        <HorizontalScrollView
+        <ScrollView
+            android:id="@+id/scrollvertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/scrollhorizontal"
-            android:scrollbars="horizontal"
+            android:scrollbars="vertical"
             android:layout_weight="1">
 
-<!--
-                <TableLayout
-                    android:id="@+id/tabla"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/scrollhorizontal"
+                android:scrollbars="horizontal"
+                android:layout_weight="1">
+
+    <!--
+                    <TableLayout
+                        android:id="@+id/tabla"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
 
-                </TableLayout>
-        -->
+                    </TableLayout>
+            -->
 
 
             <ImageView

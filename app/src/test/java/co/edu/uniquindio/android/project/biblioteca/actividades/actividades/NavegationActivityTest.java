@@ -1,27 +1,24 @@
-package co.edu.uniquindio.android.electiva.practicanavegationdrawer.test;
+package co.edu.uniquindio.android.project.biblioteca.actividades.actividades;
 
-import android.app.Activity;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-
 import org.junit.Test;
+
 
 
 /**
  * Created by Pc on 14/04/2017.
  */
-public class NavegationActivityTest extends Activity{
-
-
+public class NavegationActivityTest {
     @Test
     public void onCreate() throws Exception {
-
-            verificaConexion();
+verificaConexion();
     }
     /**
     @Test
     public void onOptionsItemSelected() throws Exception {
+
     }
     */
     @Test
@@ -40,6 +37,5 @@ public class NavegationActivityTest extends Activity{
         }
         return bConectado;
     }
-
 
 }
