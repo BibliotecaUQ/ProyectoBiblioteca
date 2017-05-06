@@ -11,7 +11,8 @@ import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
 /**
  * Clase que contiene la información para mostrar información de la aplicacion y quienes la crearon
  * Created on 12/04/2017.
- * * @author jhoan sebastian gomez medina
+ *
+ * @author jhoan sebastian gomez medina
  *
  * @author john sebastian agudelo ospina
  */

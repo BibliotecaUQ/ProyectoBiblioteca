@@ -63,7 +63,7 @@ public class NavegationActivity extends AppCompatActivity {
     //Variable Bitmap que contendra la imagen del Json
     private Bitmap imagen;
     private Bitmap imagen2;
-    private  TextView nom_ev;
+    private TextView nom_ev;
     private TextView desc_ev;
     private ImageView img_ev;
 
@@ -85,7 +85,7 @@ public class NavegationActivity extends AppCompatActivity {
             img = (ImageView) findViewById(R.id.image_evento);
 
             Toast toast = Toast.makeText(getApplicationContext(), "No es posible actualizar", Toast.LENGTH_LONG);
-           // toast.show();
+            // toast.show();
             Toast toast2 = Toast.makeText(getApplicationContext(), "No tienes conexión a internet", Toast.LENGTH_LONG);
             //toast2.show();
 
@@ -273,7 +273,6 @@ public class NavegationActivity extends AppCompatActivity {
                 JSONReader cJSONReader = new JSONReader();
 
                 try {
-
                     list_contenido_json = cJSONReader.readJSONMsg(reader);
 
                 } catch (IOException e) {
@@ -302,9 +301,14 @@ public class NavegationActivity extends AppCompatActivity {
             desc_ev.setText("" + list_contenido_json.get(4));
             img_ev.setImageBitmap(imagen2);
         }
-
     }
 
+    /**
+     * En este metodo se obtiene la imagen desde la url que se obtiene en el JSon y se retorna en una variable de tipo bitmap
+     *
+     * @param url
+     * @return
+     */
     private Bitmap getImagenJson(String url) {
         Bitmap bm = null;
         try {

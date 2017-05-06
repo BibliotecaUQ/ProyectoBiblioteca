@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * Created  on 07/04/2017.
- *
+ * <p>
  * Esta clase se encarga de realizar el procdimiento adecado en cuanto a la lectura y
  * obtención de los elementos que se encuatran en el formato Json
  *
