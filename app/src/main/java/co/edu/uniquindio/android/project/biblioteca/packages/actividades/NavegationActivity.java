@@ -67,6 +67,7 @@ public class NavegationActivity extends AppCompatActivity {
     private TextView desc_ev;
     private ImageView img_ev;
 
+    private HttpURLConnection urlConnection ;
     /**
      * Este metodo contiene el metodo dde opciones del menu, ademas
      * de que se encarga de crear la vista del layout principal de la navegacion. cada opcion del menu realiza un accion distinta.
@@ -244,7 +245,7 @@ public class NavegationActivity extends AppCompatActivity {
      * Class que realizará de forma asíncrona(BackGround) la consulta a la dirección HTTP donde se encuentra el archivo Json
      */
     private class JSONParse extends AsyncTask<String, String, JsonReader> {
-        HttpURLConnection urlConnection = null;
+
 
         @Override
         protected void onPreExecute() {
@@ -287,8 +288,11 @@ public class NavegationActivity extends AppCompatActivity {
                 e.printStackTrace();
             } finally {
                 if (urlConnection != null) urlConnection.disconnect();
-                return reader;
+
+
             }
+            return reader;
+
         }
 
         @Override

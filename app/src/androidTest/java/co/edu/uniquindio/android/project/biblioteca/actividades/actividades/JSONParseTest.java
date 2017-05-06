@@ -36,8 +36,7 @@ public class JSONParseTest extends AsyncTask<String, String, JsonReader> {
     private TextView desc;
     //ImageView
     private ImageView img;
-    //JSON reader
-    private JsonReader reader;
+
     //Listado contenido del Json
     private List list_contenido_json;
     //Variable Bitmap que contendra la imagen del Json
@@ -46,7 +45,7 @@ public class JSONParseTest extends AsyncTask<String, String, JsonReader> {
     private TextView nom_ev;
     private TextView desc_ev;
     private ImageView img_ev;
-    private HttpURLConnection urlConnection = null;
+
 
     @Test
     public void onPreExecute()  {
@@ -62,6 +61,10 @@ public class JSONParseTest extends AsyncTask<String, String, JsonReader> {
 
     @Override
     protected JsonReader doInBackground(String... strings) {
+        //JSON reader
+        JsonReader reader=null;
+
+       HttpURLConnection urlConnection = null;
         try {
 
             // https://bibliotecauq.github.io/data.json
@@ -87,9 +90,14 @@ public class JSONParseTest extends AsyncTask<String, String, JsonReader> {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            if (urlConnection != null) urlConnection.disconnect();
+            if (urlConnection != null){
+                urlConnection.disconnect();
+            }
             return reader;
         }
+
+
+
     }
 
 

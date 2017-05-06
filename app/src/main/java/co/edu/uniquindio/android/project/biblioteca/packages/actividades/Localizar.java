@@ -22,9 +22,11 @@ public class Localizar {
     private TableLayout tabla; // Layout donde se pintará la tabla
     private ArrayList<TableRow> filas; // Array de las filas de la tabla
     private Activity actividad;
-    private Resources rs;
-    private int FILAS, COLUMNAS; // Filas y columnas de nuestra tabla
 
+    private int FILAS;// Filas de la tabla
+   // private int COLUMNAS;  // columnas de la tabla
+
+    // private  Resources rs;
 
 
     /**
@@ -36,9 +38,10 @@ public class Localizar {
     {
         this.actividad = actividad;
         this.tabla = tabla;
-        rs = this.actividad.getResources();
-        FILAS = COLUMNAS = 0;
-        filas = new ArrayList<TableRow>();
+       // rs = this.actividad.getResources();
+        FILAS = 0;
+       // COLUMNAS =0;
+         filas = new ArrayList<TableRow>();
     }
 
 
