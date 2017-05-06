@@ -21,8 +21,8 @@ import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
 
 public class LocalizarActivity extends AppCompatActivity {
 
-    private EditText search;
-    private ImageButton boton;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -33,12 +33,12 @@ public class LocalizarActivity extends AppCompatActivity {
        back();
 
 
-       boton=( ImageButton) findViewById(R.id.button_Buscar);
-      boton.setOnClickListener(new View.OnClickListener() {
+       ImageButton btn=( ImageButton) findViewById(R.id.button_Buscar);
+      btn.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
 
-              search=(EditText) findViewById(R.id.search);
+              EditText search=(EditText) findViewById(R.id.search);
               InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
               inputMethodManager.hideSoftInputFromWindow(search.getWindowToken(), 0);
 
