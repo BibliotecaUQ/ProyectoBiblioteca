@@ -1,7 +1,6 @@
 package co.edu.uniquindio.android.project.biblioteca.packages.actividades;
 
 import android.app.Activity;
-import android.content.res.Resources;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.view.Gravity;

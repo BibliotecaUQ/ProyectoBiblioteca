@@ -15,25 +15,44 @@
             android:textSize="@dimen/detalle_texto_nombre"
             android:text="Ingrese el código del libro"/>
     -->
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        style="?android:attr/buttonBarStyle"
+        android:layout_alignParentBottom="true"
+        android:divider="?android:dividerVertical">
+
         <EditText
             android:id="@+id/search"
-            android:layout_width="fill_parent"
+            android:layout_width="308dp"
             android:layout_height="wrap_content"
             android:hint="@string/codigo_libro_a_buscar"
             android:inputType="text"
             android:imeOptions="actionSend"
-            android:backgroundTint="@color/colorPrimary"/>
+            android:backgroundTint="@color/colorPrimary"
+            android:includeFontPadding="true"
+            android:orientation="vertical"
+            android:divider="?android:dividerVertical"/>
 
-        <Button
+
+        <ImageButton
             android:id="@+id/button_Buscar"
+            style="?android:borderlessButtonStyle"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="@string/boton_buscar_libro"
-            android:textSize="8pt"
-            android:textColor="@color/colorPrimaryLight"
-            android:background="@color/colorButton"/>
+            android:layout_gravity="right"
+            android:src="@drawable/ic_search"
+            android:orientation="horizontal"/>
+
+
+
+
+
+    </LinearLayout>
+
+
 
 
         <ScrollView
@@ -60,13 +79,26 @@
                     </TableLayout>
             -->
 
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                <ImageView
+                    android:id="@+id/biblioteca"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/biblioteca_localizar"/>
 
-            <ImageView
-                android:id="@+id/im"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/ubicacion"/>
 
+                    <ImageView
+                        android:id="@+id/im"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ubicacion"/>
+
+
+
+                </RelativeLayout>
         </HorizontalScrollView>
 
     </ScrollView>
