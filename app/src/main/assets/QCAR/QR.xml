@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="estante24" size="500.000000 500.000000" />
+    <ImageTarget name="estante23" size="500.000000 500.000000" />
+    <ImageTarget name="estante22" size="500.000000 500.000000" />
+    <ImageTarget name="estante21" size="500.000000 500.000000" />
+    <ImageTarget name="estante20" size="500.000000 500.000000" />
+    <ImageTarget name="estante19" size="500.000000 500.000000" />
+    <ImageTarget name="estante18" size="500.000000 500.000000" />
+    <ImageTarget name="estante17" size="500.000000 500.000000" />
+    <ImageTarget name="estante16" size="500.000000 500.000000" />
+    <ImageTarget name="estante15" size="500.000000 500.000000" />
+    <ImageTarget name="estante14" size="500.000000 500.000000" />
+    <ImageTarget name="estante13" size="500.000000 500.000000" />
+    <ImageTarget name="estante12" size="500.000000 500.000000" />
+    <ImageTarget name="estante11" size="500.000000 500.000000" />
+    <ImageTarget name="estante10" size="500.000000 500.000000" />
+    <ImageTarget name="estante9" size="500.000000 500.000000" />
+    <ImageTarget name="estante8" size="500.000000 500.000000" />
+    <ImageTarget name="estante7" size="500.000000 500.000000" />
+    <ImageTarget name="estante6" size="500.000000 500.000000" />
+    <ImageTarget name="estante5" size="500.000000 500.000000" />
+    <ImageTarget name="estante4" size="500.000000 500.000000" />
+    <ImageTarget name="estante3" size="500.000000 500.000000" />
+    <ImageTarget name="estante2" size="500.000000 500.000000" />
+    <ImageTarget name="estante1" size="500.000000 500.000000" />
+  </Tracking>
+</QCARConfig>

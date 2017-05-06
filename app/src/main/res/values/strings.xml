@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Paseo Virtual</string>
+    <string name="texto_informacion">Paseo Virtual</string>
+    <string name="espere">espere</string>
+    <string name="cargando_contenido">Cargando Contenido</string>
+    <string name="creada_por">Creada Por</string>
+    <string name="autor_1">Jhoan Sebastián Gómez Medina</string>
+    <string name="autor_2">Jonh Sebastián Agudelo Ospina</string>
+    <string name="creada_anio">Biblioteca C.R.A.I - Universidad del Quindío, 2017</string>
+
+
+    <string name="Consulta_tus_libros_en_línea">Consulta tus libros en línea</string>
+    <string name="actualizar_página_principal">Actualizar</string>
+    <string name="salir">Salir</string>
+    <string name="Localizar_Libro">Localizar Libro</string>
+    <string name="Paseo_virtual">Paseo virtual</string>
+    <string name="Acerca_de">Acerca de</string>
+    <string name="Copiar_enlace">Copiar enlace</string>
+
+
+    <string name="ver_en_el_navegador">Ver en el navegador</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

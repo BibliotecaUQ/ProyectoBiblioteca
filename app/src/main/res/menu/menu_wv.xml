@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+        <item
+            android:id="@+id/menu_1"
+            android:title="@string/actualizar_página_principal" />
+
+        <item
+            android:id="@+id/menu_2"
+            android:title="@string/ver_en_el_navegador" />
+        <item
+            android:id="@+id/menu_3"
+            android:title="Copiar enlace" />
+
+
+</menu>
