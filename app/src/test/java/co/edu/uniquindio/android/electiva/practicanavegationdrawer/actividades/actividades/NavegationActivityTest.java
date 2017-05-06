@@ -15,12 +15,12 @@ public class NavegationActivityTest {
     public void onCreate() throws Exception {
 verificaConexion();
     }
-
+    /**
     @Test
     public void onOptionsItemSelected() throws Exception {
 
     }
-
+    */
     @Test
     public static boolean verificaConexion() throws Exception {
         Context ctx=null;

@@ -1,26 +1,19 @@
-package co.edu.uniquindio.android.project.biblioteca.packagesAR.actividades;
+package co.edu.uniquindio.android.project.biblioteca.packages.actividades;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TableLayout;
-import android.widget.Toast;
-
-import java.util.ArrayList;
 
 import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
-
-import static co.edu.uniquindio.android.project.biblioteca.packagesAR.R.drawable.ubicacion;
 
 /**
  * Created by sebastian on 5/05/17.
  */
 
-public class Activity_localizar extends Activity {
+public class LocalizarActivity extends Activity {
 
 
 

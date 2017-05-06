@@ -1,4 +1,4 @@
-package co.edu.uniquindio.android.project.biblioteca.packagesAR.vo;
+package co.edu.uniquindio.android.project.biblioteca.packages.vo;
 
 
 import android.util.JsonReader;
@@ -25,11 +25,6 @@ public class JSONReader {
     public String img = "";
     public String img2 = "";
 
-    /**
-     * Método Constructor d la clase
-     */
-    public JSONReader() {
-    }
 
     //Método que lee apartado a apartado dentro del JSON
     public List readJSONMsg(JsonReader reader) throws IOException {
@@ -40,40 +35,40 @@ public class JSONReader {
         while (reader.hasNext()) {
 
             String name = reader.nextName();
-            if (name.equals("Proyecto")) {
+            if ("Proyecto".equals(name)) {
                 //Estamos en el array de
 
                 reader.beginArray();
                 reader.beginObject();
                 while (reader.hasNext()) {
                     String object = reader.nextName();
-                    if (object.equals("Evento")) {
+                    if ("Evento".equals(object)) {
                         Event = reader.nextString();
                         setEvent(Event);
                         Array_json.add(Event);
                     }
 
-                    if (object.equals("Descripcion")) {
+                    if ("Descripcion".equals(object)) {
                         Descrip = reader.nextString();
                         Array_json.add(Descrip);
                     }
 
-                    if (object.equals("image")) {
+                    if ("image".equals(object)) {
                         img = reader.nextString();
                         setImg(img);
                         Array_json.add(img);
                     }
-                    if (object.equals("Evento2")) {
+                    if ("Evento2".equals(object)) {
                         Event2 = reader.nextString();
                         Array_json.add(Event2);
                     }
-                    if (object.equals("Descripcion2")) {
+                    if ("Descripcion2".equals(object)) {
                         Descrip2 = reader.nextString();
                         Array_json.add(Descrip2);
 
                     }
 
-                    if (object.equals("image2")) {
+                    if ("image2".equals(object)) {
                         img2 = reader.nextString();
                         Array_json.add(img2);
                     }

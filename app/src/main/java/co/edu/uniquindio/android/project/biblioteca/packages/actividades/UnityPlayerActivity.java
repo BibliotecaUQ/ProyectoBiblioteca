@@ -1,4 +1,4 @@
-package co.edu.uniquindio.android.project.biblioteca.packagesAR.actividades;
+package co.edu.uniquindio.android.project.biblioteca.packages.actividades;
 
 import com.unity3d.player.*;
 

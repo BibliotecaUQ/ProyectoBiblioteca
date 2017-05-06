@@ -1,4 +1,4 @@
-package co.edu.uniquindio.android.project.biblioteca.packagesAR.actividades;
+package co.edu.uniquindio.android.project.biblioteca.packages.actividades;
 
 
 import android.app.Activity;
@@ -31,9 +31,9 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
 
-import co.edu.uniquindio.android.project.biblioteca.packagesAR.fragmentos.HomeFragment;
+import co.edu.uniquindio.android.project.biblioteca.packages.fragmentos.HomeFragment;
 import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
-import co.edu.uniquindio.android.project.biblioteca.packagesAR.vo.JSONReader;
+import co.edu.uniquindio.android.project.biblioteca.packages.vo.JSONReader;
 
 
 /**
@@ -126,7 +126,7 @@ public class NavegationActivity extends AppCompatActivity {
                     case R.id.menu_seccion_1:
                         //remplazarFragmentohome(new HomeFragment());
                         //Toast.makeText(getApplicationContext(), "Localizar libro", Toast.LENGTH_LONG).show();
-                        remplazarActivity(new Activity_localizar());
+                        remplazarActivity(new LocalizarActivity());
                         break;
 
                     case R.id.menu_seccion_2:
@@ -134,7 +134,7 @@ public class NavegationActivity extends AppCompatActivity {
                         break;
 
                     case R.id.menu_seccion_3:
-                        remplazarActivity(new Acerca_de_Activity());
+                        remplazarActivity(new AcercaDeActivity());
                         break;
 
                     case R.id.menu_opcion_1:
@@ -142,7 +142,7 @@ public class NavegationActivity extends AppCompatActivity {
                             Toast toast = Toast.makeText(getApplicationContext(), "No tienes conexión a internet", Toast.LENGTH_SHORT);
                             toast.show();
                         } else {
-                            remplazarActivity(new web_view());
+                            remplazarActivity(new WebViewer());
                         }
 
                         break;
@@ -164,6 +164,7 @@ public class NavegationActivity extends AppCompatActivity {
                         finish();
 
                         break;
+                    default: //nothing
                 }
                 item.setChecked(true);
                 drawerLayout.closeDrawers();
@@ -260,7 +261,6 @@ public class NavegationActivity extends AppCompatActivity {
         //Este metodo realizará la conexión devolviendo el JSON
         @Override
         protected JsonReader doInBackground(String... args) {
-            String temp = "";
 
             try {
 
@@ -279,8 +279,8 @@ public class NavegationActivity extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                imagen = get_imagenJson("" + list_contenido_json.get(2));
-                imagen2 = get_imagenJson("" + list_contenido_json.get(5));
+                imagen = getImagenJson("" + list_contenido_json.get(2));
+                imagen2 = getImagenJson("" + list_contenido_json.get(5));
 
             } catch (MalformedURLException e) {
                 e.printStackTrace();
@@ -305,7 +305,7 @@ public class NavegationActivity extends AppCompatActivity {
 
     }
 
-    private Bitmap get_imagenJson(String url) {
+    private Bitmap getImagenJson(String url) {
         Bitmap bm = null;
         try {
             URL _url = new URL(url);

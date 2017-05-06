@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="co.edu.uniquindio.android.project.biblioteca.packagesAR.actividades.NavegationActivity">
+        <activity android:name="co.edu.uniquindio.android.project.biblioteca.packages.actividades.NavegationActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,12 +19,12 @@
 
        
         </activity>
-        <activity android:name="co.edu.uniquindio.android.project.biblioteca.packagesAR.actividades.web_view"/>
-        <activity android:name="co.edu.uniquindio.android.project.biblioteca.packagesAR.actividades.Activity_localizar"/>
-        <activity android:name="co.edu.uniquindio.android.project.biblioteca.packagesAR.actividades.Acerca_de_Activity" />
-        <activity android:name="co.edu.uniquindio.android.project.biblioteca.packagesAR.actividades.UnityPlayerProxyActivity" />
-        <activity android:name="co.edu.uniquindio.android.project.biblioteca.packagesAR.actividades.UnityPlayerActivity" />
-        <activity android:screenOrientation="fullSensor" android:launchMode="singleTask" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale" android:name="co.edu.uniquindio.android.project.biblioteca.packagesAR.actividades.UnityPlayerNativeActivity"/>
+        <activity android:name="co.edu.uniquindio.android.project.biblioteca.packages.actividades.WebViewer"/>
+        <activity android:name="co.edu.uniquindio.android.project.biblioteca.packages.actividades.LocalizarActivity"/>
+        <activity android:name="co.edu.uniquindio.android.project.biblioteca.packages.actividades.AcercaDeActivity" />
+        <activity android:name="co.edu.uniquindio.android.project.biblioteca.packages.actividades.UnityPlayerProxyActivity" />
+        <activity android:name="co.edu.uniquindio.android.project.biblioteca.packages.actividades.UnityPlayerActivity" />
+        <activity android:screenOrientation="fullSensor" android:launchMode="singleTask" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale" android:name="co.edu.uniquindio.android.project.biblioteca.packages.actividades.UnityPlayerNativeActivity"/>
 
 
         <uses-library android:name="com.ti.s3d" android:required="false" />

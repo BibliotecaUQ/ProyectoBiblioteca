@@ -19,12 +19,11 @@ public class NavegationActivityTest extends Activity{
 
             verificaConexion();
     }
-
+    /**
     @Test
     public void onOptionsItemSelected() throws Exception {
-
     }
-
+    */
     @Test
     public static boolean verificaConexion() throws Exception {
         Context ctx=null;

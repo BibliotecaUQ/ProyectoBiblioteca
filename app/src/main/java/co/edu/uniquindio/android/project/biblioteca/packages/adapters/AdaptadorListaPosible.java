@@ -1,4 +1,4 @@
-package co.edu.uniquindio.android.project.biblioteca.packagesAR.adapters;
+package co.edu.uniquindio.android.project.biblioteca.packages.adapters;
 
 
 
@@ -11,22 +11,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
-import co.edu.uniquindio.android.project.biblioteca.packagesAR.vo.Lista_atributes;
+import co.edu.uniquindio.android.project.biblioteca.packages.vo.ListaAtributes;
 
 /**
  *Clase en la cual se llama el layout de detalle de lista y sse infla para ser mostrad con la informacion que llegue,
  * ya que se pone la imagen y la informacion correspondiente n cada caso segun el contexto
  * como atributos tiene un arreglo de personajes y el contexto de la actividad.
  */
-public class Adaptador_Lista_Posible extends ArrayAdapter {
+public class AdaptadorListaPosible extends ArrayAdapter {
 
-    private Lista_atributes[] lista;
-    Activity context;
+    private ListaAtributes[] lista;
+    public Activity context;
     /**
      *  Metodo constructor de la clase
      *   @param  context
      */
-    public Adaptador_Lista_Posible(Activity context, Lista_atributes[] listaP){
+    public AdaptadorListaPosible(Activity context, ListaAtributes[] listaP){
         super(context, R.layout.adapter_posible_list,listaP);
         this.lista =listaP;
         this.context=context;

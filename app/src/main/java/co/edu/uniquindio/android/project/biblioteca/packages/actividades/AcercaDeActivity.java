@@ -1,4 +1,4 @@
-package co.edu.uniquindio.android.project.biblioteca.packagesAR.actividades;
+package co.edu.uniquindio.android.project.biblioteca.packages.actividades;
 
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -16,14 +16,14 @@ import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
  * @author john sebastian agudelo ospina
  */
 
-public class Acerca_de_Activity extends AppCompatActivity {
+public class AcercaDeActivity extends AppCompatActivity {
 
     //textview usados en la vista
-    TextView creada_por;
-    TextView autor_1;
-    TextView autor_2;
-    TextView creada_anio;
-    ImageView image;
+    public TextView creada_por;
+    public TextView autor_1;
+    public TextView autor_2;
+    public TextView creada_anio;
+    public ImageView image;
 
     /**
      * aca se crea la vista dela layout correspondiente a la clase.

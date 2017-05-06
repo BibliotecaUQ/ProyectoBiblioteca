@@ -1,4 +1,4 @@
-package co.edu.uniquindio.android.project.biblioteca.packagesAR.fragmentos;
+package co.edu.uniquindio.android.project.biblioteca.packages.fragmentos;
 
 
 import android.os.Bundle;

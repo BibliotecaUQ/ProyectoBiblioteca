@@ -1,4 +1,4 @@
-package co.edu.uniquindio.android.project.biblioteca.packagesAR.actividades;
+package co.edu.uniquindio.android.project.biblioteca.packages.actividades;
 
 
 import android.content.Context;
@@ -25,7 +25,7 @@ import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
  * @author jhoan sebastian gomez medina
  * @author john sebastian agudelo ospina
  */
-public class web_view extends AppCompatActivity {
+public class WebViewer extends AppCompatActivity {
 
     //Variable para actualizar
     private SwipeRefreshLayout swipeContainer;

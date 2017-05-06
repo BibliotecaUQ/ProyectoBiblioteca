@@ -29,40 +29,40 @@ public class JSONReaderTest {
         while (reader.hasNext()) {
 
             String name = reader.nextName();
-            if (name.equals("Proyecto")) {
+            if ("Proyecto".equals(name)) {
                 //Estamos en el array de
 
                 reader.beginArray();
                 reader.beginObject();
                 while (reader.hasNext()) {
                     String object = reader.nextName();
-                    if (object.equals("Evento")) {
+                    if ("Evento".equals(object)) {
                         Event = reader.nextString();
 
                         Array_json.add(Event);
                     }
 
-                    if (object.equals("Descripcion")) {
+                    if ("Descripcion".equals(object)) {
                         Descrip = reader.nextString();
                         Array_json.add(Descrip);
                     }
 
-                    if (object.equals("image")) {
+                    if ("image".equals(object)) {
                         img = reader.nextString();
 
                         Array_json.add(img);
                     }
-                    if (object.equals("Evento2")) {
+                    if ("Evento2".equals(object)) {
                         Event2 = reader.nextString();
                         Array_json.add(Event2);
                     }
-                    if (object.equals("Descripcion2")) {
+                    if ("Descripcion2".equals(object)) {
                         Descrip2 = reader.nextString();
                         Array_json.add(Descrip2);
 
                     }
 
-                    if (object.equals("image2")) {
+                    if ("image2".equals(object)) {
                         img2 = reader.nextString();
                         Array_json.add(img2);
                     }

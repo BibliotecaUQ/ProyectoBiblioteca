@@ -1,4 +1,4 @@
-package co.edu.uniquindio.android.project.biblioteca.packagesAR.vo;
+package co.edu.uniquindio.android.project.biblioteca.packages.vo;
 
 
 /**
@@ -8,7 +8,7 @@ package co.edu.uniquindio.android.project.biblioteca.packagesAR.vo;
  * @author john sebastian agudelo ospina
  */
 
-public class Lista_atributes {
+public class ListaAtributes {
     /**
      * Constructor de contacto que inicializa los dos primeros atributos
      */
@@ -22,7 +22,7 @@ public class Lista_atributes {
      * @param descripcion detalle de la noticia
      *@param imagen imagen de la noticia
      */
-    public Lista_atributes(String nombre, String descripcion, int imagen) {
+    public ListaAtributes(String nombre, String descripcion, int imagen) {
         this.Nombre = nombre;
         this.Descripcion = descripcion;
         this.imagen=imagen;

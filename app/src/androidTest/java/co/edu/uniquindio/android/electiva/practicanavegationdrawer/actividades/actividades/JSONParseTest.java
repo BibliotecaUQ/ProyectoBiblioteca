@@ -59,8 +59,6 @@ public class JSONParseTest extends AsyncTask<String, String, JsonReader> {
 
     @Override
     protected JsonReader doInBackground(String... strings) {
-        String temp = "";
-
         try {
 
             // https://bibliotecauq.github.io/data.json
