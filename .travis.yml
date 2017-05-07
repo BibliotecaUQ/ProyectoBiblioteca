@@ -15,21 +15,18 @@ cache:
   - "$HOME/.m2/repository"
   - "$HOME/.sonar/cache"
   - '$HOME/.sonar/cache'
-addons:
-  sonar:
-    organization: "paseo-virtual-crai"
-    token:
-      secure: oqfdfeR8xfwbGoMBsPkQ8lgieh0baUAG+YLTKfomGyo1eJjK9yIMbPwcRWkUx4iXcfftiaDmGCj00xKtB5CA8ZtEW5H3QTDx18iYLunNkikWlMrOJ8IpBWpmoULpjxYnvHU5KtIPljLuGRlW4744m0vM2nZ62Oycl59qs3IXVEvld3udIOySFPFE0GIao0VOKP4tqMSdBqR7bVQD0u8xL/1oaxcMEzAZvcEahVjZjROrcvkMAYHAFC5TWPP5K9GNx6yBOeanivDWwpstNuF54LrvkAuCiptz/zw70tDZKkMxsEfMvft2G/pY+lP2eJUxzAY/RD/47TswP/UlyyH3jxdmZnbSA/Pl1IzCz9qqPLKclezPxmoicm5QUdZBjFTOVBXnEyrvAVm5KqcBvlawNyNpsBJPgvRG02NX9tcg/t1ax0mtmikHEWpJpo7gajYIM0rAteNPxcLDdLdFs/hZYcNBebBEn0tg2syLabY9Ybpv6r8yw4z6yxVLniUmdJj5aqO4DmmuPqxjWudSQ7ePaWzfED3HSVWjFJpSxFCWmZ8rpZd86xQCZKO18GH/P+MQiX6bydecx9FTrHE//4mERgAJURgHFcDegy3Wfp5JZ2UzQu9XqxV76Ucl1rL9hec6Ub3/Up54ektvFvIedKCa8jsrUoxpTxWpGYnAlxL1Uqw=
-  #env:
-   # global:
-    #  secure: v26+vSrFRTibI/fU3jMgsRj+u8Tf/FuJbHiVV9ZfG37K4hM1hZz+xt1t+UedA9S4uBWK+rIzMzqi/wX01cUdk9HFMjDZWIsf2xSSuMtEkIA2iBq+WZFV9SXqW4NO+I3FMKUKlBreqcXxIuA/0M+9zCTU66H/wDDz9iYv1iwens/zp5MAn3qtvwAvRANuQbVxt7+Rwa6eenbzgzDpafSySJ04W7nsKqXoF4brsszTMYqBvYYRjLHUM+nextSgrDNSD5Gocb2eKvUkAkvQnzMRQNmI+MHYWd33XEVFG6j52GlEIJbxUZoGiZcXj4qBujmbj4bAJhagXmXyxWMYWOxljLNEmBXjFJgVbovVtBeYE1dAo3JE0A8BT9+VFqxV2JCpVAgIbKinZqMZQdovHR/VYJ0SQ+cAV47U05u9ZMfoYSxk5CfGisvjiLiQCirIfD8lxlivvE7QdljYfWxdAIYc3Sawlr0fX0eFsrHsYqstfGuCCG0tBWmCtNG4IPcJEWz7giSNqf4A1J3xnokrYmO53PGCWtEJHkoc45rHK48jnW5q57dJ31ZGvzqXTdsJJJEAUBGpE/dzWUF6INpGl/UAUN0S+ZVqZgcT595ZMyEs7XUpm+7NcuSuK4xpDBIMXhDCDMUzY28AFvLgB16qMPJA1O4fVQ7KKD6tZZ7N9fibSC0=
+ 
 before_script: 
   - chmod +x gradlew
 script: 
   - chmod +x gradlew
-  # other script steps might be done before running the actual SonarQube analysis
-  #- ./gradlew sonarqube
+before_install:
+  - sudo apt-get install jq
+  - wget -O ~/codacy-coverage-reporter-assembly-latest.jar $(curl https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest | jq -r .assets[0].browser_download_url)
+
+
 notifications:
   email: false
-#after_success:
+after_success:
+	- java -cp ~/codacy-coverage-reporter-assembly-latest.jar com.codacy.CodacyCoverageReporter -l Java -r build/reports/jacoco/test/jacocoTestReport.xml
   #- bash <(curl -s https://codecov.io/bash)

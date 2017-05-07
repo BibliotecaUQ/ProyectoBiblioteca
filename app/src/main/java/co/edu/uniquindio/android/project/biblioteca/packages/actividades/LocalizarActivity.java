@@ -12,6 +12,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.util.regex.Pattern;
 
@@ -56,9 +57,9 @@ public class LocalizarActivity extends AppCompatActivity {
                     lp.topMargin = (int) ((y - 210) * coordenadas[1]);
                     //lp.leftMargin = x + 130;
                     //lp.topMargin = y - 210;
-                    im.setLayoutParams(lp);
                 } else {
-                    Log.v("resulltado", String.valueOf("Ingrese un código valido"));
+                    Toast.makeText(getApplicationContext(),"Ingrese un código valido", Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
@@ -69,7 +70,7 @@ public class LocalizarActivity extends AppCompatActivity {
      * @param estante id del estante
      * @return coordenadas x y y
      */
-    private static double[] coordenadas(double estante) {
+    public double[] coordenadas(double estante) {
         int x = (int) estante;
         // x | y
         double[][] porcentaje = {{0.207, 0.86},
@@ -101,7 +102,7 @@ public class LocalizarActivity extends AppCompatActivity {
      * @param cadena código a identificar
      * @return ip del estante
      */
-    private static double localizar(String cadena){
+    public  double localizar(String cadena){
         try{
             double numero=Double.parseDouble(cadena);
             return localizarGeneral(numero);
@@ -116,7 +117,7 @@ public class LocalizarActivity extends AppCompatActivity {
      * @param n código a localizar
      * @return id del estante
      */
-    private static double localizarGeneral(double n){
+    public double localizarGeneral(double n){
         // id estante | lado A
         Double[][]estantes={{1.0,1.0,5.276},
                             {2.0,170.0,307.76},
@@ -145,7 +146,7 @@ public class LocalizarActivity extends AppCompatActivity {
      * @param cadena código a localizar
      * @return id del estante
      */
-    private static double localizarMedicina(String cadena){
+    public double localizarMedicina(String cadena){
         Pattern patQ=Pattern.compile("^(q|Q)[A-Za-z]?[1-9]*");
         Pattern patW=Pattern.compile("^(w|W)[A-Za-z]?[1-9]*");
         if(patQ.matcher(cadena).matches()){

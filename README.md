@@ -7,4 +7,4 @@
 La aplicación contiene los siguientes modulos.
 
 - [x] Paseo Virtual
-- [ ] Localizar Libro
+- [x] Localizar Libro

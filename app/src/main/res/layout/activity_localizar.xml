@@ -106,8 +106,8 @@
                         android:id="@+id/im"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ubicacion"
-                        android:gravity="left"/>
+                        android:gravity="left"
+                        android:src="@android:drawable/ic_menu_myplaces" />
 
                 </RelativeLayout>
 

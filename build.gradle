@@ -10,11 +10,6 @@ buildscript {
 
     }
 }
-
-
-plugins {
-    id "org.sonarqube" version "2.4-rc1"
-}
 allprojects {
     repositories {
         jcenter()
@@ -26,13 +21,4 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
-}
-
-
-sonarqube {
-    properties {
-        //property "sonar.projectName", "Java Gradle-based project analyzed on SonarQube.com using Travis"
-        //property "sonar.host.url", "http://sonarqube.com"
-        //property "sonar.projectKey", "paseo-virtual-crai:Biblioteca"
-    }
 }
