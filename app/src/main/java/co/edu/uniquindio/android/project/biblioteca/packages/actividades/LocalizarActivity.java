@@ -47,12 +47,15 @@ public class LocalizarActivity extends AppCompatActivity {
                 if (resultado != -1.0) {
                     double[] coordenadas = coordenadas(resultado);
                     ImageView im = (ImageView) findViewById(R.id.im);
-                    im.setImageDrawable(getResources().getDrawable(R.drawable.ubicacion));
+                    im.setImageDrawable(getResources().getDrawable(R.drawable.location));
                     ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) im.getLayoutParams();
-                    int y = getResources().getDrawable(R.drawable.biblioteca).getIntrinsicHeight();
-                    int x = getResources().getDrawable(R.drawable.biblioteca).getIntrinsicWidth();
-                    lp.leftMargin = (int) (y * coordenadas[0]) + 22;
-                    lp.topMargin = (int) (x * coordenadas[1]) - 95;
+                    int x = getResources().getDrawable(R.drawable.biblioteca).getIntrinsicHeight();
+                    int y = getResources().getDrawable(R.drawable.biblioteca).getIntrinsicWidth();
+                    Log.v("resultado",String.valueOf(x)+" "+String.valueOf(y));
+                    lp.leftMargin = (int) ((x + 130) * coordenadas[0]);
+                    lp.topMargin = (int) ((y - 210) * coordenadas[1]);
+                    //lp.leftMargin = x + 130;
+                    //lp.topMargin = y - 210;
                     im.setLayoutParams(lp);
                 } else {
                     Log.v("resulltado", String.valueOf("Ingrese un código valido"));
@@ -61,24 +64,28 @@ public class LocalizarActivity extends AppCompatActivity {
         });
     }
 
-
+    /**
+     * Método que contiene las coordenadas correspondientes a cada estante
+     * @param estante id del estante
+     * @return coordenadas x y y
+     */
     private static double[] coordenadas(double estante) {
         int x = (int) estante;
         // x | y
-        double[][] porcentaje = {{0.202, 0.846},
-                                {0.202, 0.791},
-                                {0.202, 0.735},
-                                {0.202, 0.68},
-                                {0.202, 0.62},
-                                {0.202, 0.56},
-                                {0.202, 0.506},
-                                {0.202, 0.456},
-                                {0.202, 0.396},
-                                {0.202, 0.346},
-                                {0.202, 0.291},
-                                {0.202, 0.24},
-                                {0.202, 0.185},
-                                {0.202, 0.131},
+        double[][] porcentaje = {{0.207, 0.86},
+                                {0.207, 0.802},
+                                {0.207, 0.745},
+                                {0.207, 0.685},
+                                {0.207, 0.627},
+                                {0.207, 0.511},
+                                {0.207, 0.456},
+                                {0.207, 0.396},
+                                {0.207, 0.346},
+                                {0.207, 0.291},
+                                {0.207, 0.236},
+                                {0.207, 0.18},
+                                {0.207, 0.12},
+                                {0.535, 0.298},
                                 {0.89, 0.30},
                                 {0.89, 0.63}};
         double[] coordenadas = {porcentaje[x - 1][0], porcentaje[x - 1][1]};

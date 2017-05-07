@@ -16,7 +16,7 @@ import java.net.URLConnection;
 public class NavegationActivityTest extends TestCase {
 
     @Test
-    public void ProbarConexionURLJSon() throws Exception {
+    public void probarConexionURLJSon() throws Exception {
         String urljson = "https://bibliotecauq.github.io/data.json";
 
         try {
