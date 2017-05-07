@@ -193,6 +193,7 @@ public class NavegationActivity extends AppCompatActivity {
             case android.R.id.button3:
                 drawerLayout.openDrawer(GravityCompat.START);
                 return true;
+            default://nothing
 
         }
         return super.onOptionsItemSelected(item);

@@ -82,8 +82,8 @@ public class JSONParseTest extends AsyncTask<String, String, JsonReader> {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            imagen = get_imagenJson("" + list_contenido_json.get(2));
-            imagen2 = get_imagenJson("" + list_contenido_json.get(5));
+            imagen = getImagenJson("" + list_contenido_json.get(2));
+            imagen2 = getImagenJson("" + list_contenido_json.get(5));
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -115,7 +115,7 @@ public class JSONParseTest extends AsyncTask<String, String, JsonReader> {
         img_ev.setImageBitmap(imagen2);
     }
 
-    private Bitmap get_imagenJson(String url) {
+    private Bitmap getImagenJson(String url) {
         Bitmap bm = null;
         try {
             URL _url = new URL(url);
