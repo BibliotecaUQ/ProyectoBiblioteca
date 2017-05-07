@@ -6,11 +6,14 @@ android {
     compileSdkVersion 23
     buildToolsVersion '25.0.0'
     defaultConfig {
-        applicationId 'co.edu.uniquindio.android.proyecto.biblioteca'
+        applicationId 'co.edu.uniquindio.android.proyecto.biblioteca.packages'
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+
+
+
     }
     splits {
         abi {
@@ -41,6 +44,10 @@ android {
             testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         }
 
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
 }
 
 dependencies {
@@ -48,6 +55,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+//Tests
     testCompile 'junit:junit:4.12'
     // Required for instrumented tests
     androidTestCompile 'com.android.support:support-annotations:23.3.0'

@@ -7,16 +7,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
 
 /**
- * Created by sebastian on 5/05/17.
+ /**
+ * Actividad donde se define logica correspondiente a el caso de uso de localizar libro
+ *
+ * @author jhoan sebastian gomez medina
+ * @author john sebastian agudelo ospina
  */
 
 public class LocalizarActivity extends AppCompatActivity {
@@ -39,6 +41,9 @@ public class LocalizarActivity extends AppCompatActivity {
           public void onClick(View view) {
 
               EditText search=(EditText) findViewById(R.id.search);
+
+
+
               InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
               inputMethodManager.hideSoftInputFromWindow(search.getWindowToken(), 0);
 
@@ -51,15 +56,11 @@ public class LocalizarActivity extends AppCompatActivity {
               lp.topMargin+=8;
               im.setLayoutParams(lp);
 
-
-
-
           }
       });
 
 
         /**
-
 
          Localizar tabla = new Localizar(this, (TableLayout)findViewById(R.id.tabla));
 

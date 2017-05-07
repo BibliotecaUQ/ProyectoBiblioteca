@@ -17,16 +17,17 @@
     -->
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         style="?android:attr/buttonBarStyle"
         android:layout_alignParentBottom="true"
-        android:divider="?android:dividerVertical">
+        android:divider="?android:dividerVertical"
+        >
 
         <EditText
             android:id="@+id/search"
-            android:layout_width="308dp"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:hint="@string/codigo_libro_a_buscar"
             android:inputType="text"
@@ -34,72 +35,82 @@
             android:backgroundTint="@color/colorPrimary"
             android:includeFontPadding="true"
             android:orientation="vertical"
-            android:divider="?android:dividerVertical"/>
+            android:divider="?android:dividerVertical"
+            android:layout_weight="1"
+            android:ems="10"
+            android:scrollbars = "vertical"
+            />
 
 
         <ImageButton
             android:id="@+id/button_Buscar"
             style="?android:borderlessButtonStyle"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:src="@drawable/ic_search"
-            android:orientation="horizontal"/>
-
-
-
-
+            android:orientation="horizontal"
+            android:layout_weight="0"/>
 
     </LinearLayout>
-
-
 
 
         <ScrollView
             android:id="@+id/scrollvertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:scrollbars="vertical"
-            android:layout_weight="1">
+            android:layout_weight="3">
 
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/scrollhorizontal"
-                android:scrollbars="horizontal"
-                android:layout_weight="1">
+            <!--    <HorizontalScrollView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/scrollhorizontal"
+                  android:scrollbars="horizontal"
+                  android:layout_weight="3">
+              </HorizontalScrollView>
+              -->
+      <!--
+                      <TableLayout
+                          android:id="@+id/tabla"
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent">
 
-    <!--
-                    <TableLayout
-                        android:id="@+id/tabla"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
 
+                      </TableLayout>
+              -->
 
-                    </TableLayout>
-            -->
-
-                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    xmlns:tools="http://schemas.android.com/tools"
+                <RelativeLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                    android:layout_height="wrap_content">
+
                 <ImageView
                     android:id="@+id/biblioteca"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/biblioteca_localizar"/>
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/biblioteca_localizar"
+                    android:layout_gravity="fill|top"
+                    android:scaleType="fitXY"
+                    android:layout_marginTop="4dp"
+                    android:adjustViewBounds="true"
+                    android:gravity="center"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:paddingLeft="1dp"
+
+                    />
 
 
                     <ImageView
                         android:id="@+id/im"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/ubicacion"/>
-
-
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ubicacion"
+                        android:gravity="left"/>
 
                 </RelativeLayout>
-        </HorizontalScrollView>
+
 
     </ScrollView>
 
