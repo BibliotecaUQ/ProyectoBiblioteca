@@ -35,14 +35,11 @@ public class LocalizarActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(R.string.localizar_libro);
         back();
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
         ImageButton btn = (ImageButton) findViewById(R.id.button_Buscar);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 EditText search = (EditText) findViewById(R.id.search);
-
-
                 InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 inputMethodManager.hideSoftInputFromWindow(search.getWindowToken(), 0);
                 String cadena = search.getText().toString();
@@ -69,110 +66,107 @@ public class LocalizarActivity extends AppCompatActivity {
         int x = (int) estante;
         // x | y
         double[][] porcentaje = {{0.202, 0.846},
-                {0.202, 0.791},
-                {0.202, 0.735},
-                {0.202, 0.68},
-                {0.202, 0.62},
-                {0.202, 0.56},
-                {0.202, 0.506},
-                {0.202, 0.456},
-                {0.202, 0.396},
-                {0.202, 0.346},
-                {0.202, 0.291},
-                {0.202, 0.24},
-                {0.202, 0.185},
-                {0.202, 0.131},
-                {0.89, 0.30},
-                {0.89, 0.63}};
+                                {0.202, 0.791},
+                                {0.202, 0.735},
+                                {0.202, 0.68},
+                                {0.202, 0.62},
+                                {0.202, 0.56},
+                                {0.202, 0.506},
+                                {0.202, 0.456},
+                                {0.202, 0.396},
+                                {0.202, 0.346},
+                                {0.202, 0.291},
+                                {0.202, 0.24},
+                                {0.202, 0.185},
+                                {0.202, 0.131},
+                                {0.89, 0.30},
+                                {0.89, 0.63}};
         double[] coordenadas = {porcentaje[x - 1][0], porcentaje[x - 1][1]};
         return coordenadas;
-
-
-
     }
 
 
 
 
-/**
- * Método que indentifica que tipo de código es y ejecuta el método correspondiente
- *
- * @param cadena código a identificar
- * @return ip del estante
- */
-private static double localizar(String cadena){
+    /**
+     * Método que indentifica que tipo de código es y ejecuta el método correspondiente
+     *
+     * @param cadena código a identificar
+     * @return ip del estante
+     */
+    private static double localizar(String cadena){
         try{
-        double numero=Double.parseDouble(cadena);
-        return localizarGeneral(numero);
+            double numero=Double.parseDouble(cadena);
+            return localizarGeneral(numero);
         }catch(NumberFormatException nfe){
-        return localizarMedicina(cadena);
+            return localizarMedicina(cadena);
         }
-        }
+    }
 
 
-/**
- * Método que lozaliza un código numérico
- * @param n código a localizar
- * @return id del estante
- */
-private static double localizarGeneral(double n){
+    /**
+     * Método que lozaliza un código numérico
+     * @param n código a localizar
+     * @return id del estante
+     */
+    private static double localizarGeneral(double n){
         // id estante | lado A
         Double[][]estantes={{1.0,1.0,5.276},
-        {2.0,170.0,307.76},
-        {3.0,307.76,339.0},
-        {4.0,339.0,364.3},
-        {5.0,364.36,396.0},
-        {6.0,398.09861,511.8},
-        {7.0,511.8,519.53},
-        {8.0,519.53,546.0},
-        {9.0,546.0,612.0},
-        {10.0,621.381,628.1688},
-        {11.0,628.1688,657.76},
-        {12.0,657.76,664.0},
-        {13.0,664.0,698.1},
-        {14.0,800.0,900.0}};
+                            {2.0,170.0,307.76},
+                            {3.0,307.76,339.0},
+                            {4.0,339.0,364.3},
+                            {5.0,364.36,396.0},
+                            {6.0,398.09861,511.8},
+                            {7.0,511.8,519.53},
+                            {8.0,519.53,546.0},
+                            {9.0,546.0,612.0},
+                            {10.0,621.381,628.1688},
+                            {11.0,628.1688,657.76},
+                            {12.0,657.76,664.0},
+                            {13.0,664.0,698.1},
+                            {14.0,800.0,900.0}};
         for(Double[]fila:estantes){
-        if(fila[1]<=n&&fila[2]>=n){
-        return fila[0];
-        }
+          if(fila[1]<=n&&fila[2]>=n){
+              return fila[0];
+          }
         }
         return-1.0;
-        }
+    }
 
-/**
- * Método que devuelve el estante al que pertenece el código corriespondiente a medicina
- * @param cadena código a localizar
- * @return id del estante
- */
-private static double localizarMedicina(String cadena){
+    /**
+     * Método que devuelve el estante al que pertenece el código corriespondiente a medicina
+     * @param cadena código a localizar
+     * @return id del estante
+     */
+    private static double localizarMedicina(String cadena){
         Pattern patQ=Pattern.compile("^(q|Q)[A-Za-z]?[1-9]*");
         Pattern patW=Pattern.compile("^(w|W)[A-Za-z]?[1-9]*");
         if(patQ.matcher(cadena).matches()){
-        return 15.0;
+         return 15.0;
         }
         else if(patW.matcher(cadena).matches()){
-        return 16.0;
+         return 16.0;
         }
         return-1.0;
-        }
+    }
 
-/**
- * accion atras en toolbar
- */
-private void back(){
+    /**
+     * accion atras en toolbar
+     */
+    private void back(){
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        }
+    }
 
-/**
- * accion atras en toolbar
- * @return boolean
- */
-@Override
-public boolean onSupportNavigateUp(){
+    /**
+     * accion atras en toolbar
+     * @return boolean
+     */
+    @Override
+    public boolean onSupportNavigateUp(){
         onBackPressed();
         return false;
-        }
+    }
 
 
 
