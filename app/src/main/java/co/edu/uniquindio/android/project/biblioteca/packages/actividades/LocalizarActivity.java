@@ -2,6 +2,7 @@ package co.edu.uniquindio.android.project.biblioteca.packages.actividades;
 
 
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -33,6 +34,8 @@ public class LocalizarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_localizar);
         getSupportActionBar().setTitle(R.string.localizar_libro);
         back();
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         ImageButton btn = (ImageButton) findViewById(R.id.button_Buscar);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override

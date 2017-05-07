@@ -126,7 +126,7 @@ public class NavegationActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.menu_seccion_1:
                         //remplazarFragmentohome(new HomeFragment());
-                        //Toast.makeText(getApplicationContext(), "Localizar libro", Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getApplicationContext(), "localizar libro", Toast.LENGTH_LONG).show();
                         remplazarActivity(new LocalizarActivity());
                         break;
 
