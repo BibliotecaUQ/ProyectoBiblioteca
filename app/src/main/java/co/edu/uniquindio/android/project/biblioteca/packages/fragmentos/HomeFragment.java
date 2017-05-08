@@ -22,10 +22,10 @@ public class HomeFragment extends Fragment {
     /**
      * Metodo constructor del fragemento
 
-    public HomeFragment() {
-        // Required empty public constructor
-    }
- */
+     public HomeFragment() {
+     // Required empty public constructor
+     }
+     */
 
     /**
      * este metodo realiza una nueva instancia del fragmento home

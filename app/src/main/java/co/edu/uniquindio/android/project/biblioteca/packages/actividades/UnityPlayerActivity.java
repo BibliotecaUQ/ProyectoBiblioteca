@@ -19,26 +19,33 @@ import android.view.Window;
 public class UnityPlayerActivity extends Activity {// don't change the name of this variable; referenced from native code
     protected UnityPlayer mUnityPlayer;
 
+    /**
+     * onCreate:Evento de android studio en ciclo de vida de la APP, se instancian los elementos necesarios para esta vista
+     *
+     * @param savedInstanceState
+     */
     // Setup activity layout
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
-
         getWindow().setFormat(PixelFormat.RGBX_8888); // <--- This makes xperia play happy
-
         mUnityPlayer = new UnityPlayer(this);
         setContentView(mUnityPlayer);
         mUnityPlayer.requestFocus();
     }
 
-
+    /**
+     * onBackPressed:Evento de android studio en ciclo de vida de la APP
+     */
     @Override
-    public void onBackPressed()
-    {
-        // Invoca al método
+    public void onBackPressed() {   // Invoca al método
         super.onBackPressed();
     }
+
+    /**
+     * onDestroy:Evento de android studio en ciclo de vida de la APP
+     */
     // Quit Unity
     @Override
     protected void onDestroy() {
@@ -46,6 +53,9 @@ public class UnityPlayerActivity extends Activity {// don't change the name of t
         super.onDestroy();
     }
 
+    /**
+     * onPause:Evento de android studio en ciclo de vida de la APP
+     */
     // Pause Unity
     @Override
     protected void onPause() {
@@ -53,6 +63,9 @@ public class UnityPlayerActivity extends Activity {// don't change the name of t
         mUnityPlayer.pause();
     }
 
+    /**
+     * onResume:Evento de android studio en ciclo de vida de la APP
+     */
     // Resume Unity
     @Override
     protected void onResume() {
@@ -60,6 +73,11 @@ public class UnityPlayerActivity extends Activity {// don't change the name of t
         mUnityPlayer.resume();
     }
 
+    /**
+     * onConfigurationChanged:Evento de android studio en ciclo de vida de la APP
+     *
+     * @param newConfig
+     */
     // This ensures the layout will be correct.
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
@@ -67,6 +85,11 @@ public class UnityPlayerActivity extends Activity {// don't change the name of t
         mUnityPlayer.configurationChanged(newConfig);
     }
 
+    /**
+     * onwindowFocusChanged:Evento de android studio en ciclo de vida de la APP
+     *
+     * @param hasFocus
+     */
     // Notify Unity of the focus change.
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
@@ -74,6 +97,12 @@ public class UnityPlayerActivity extends Activity {// don't change the name of t
         mUnityPlayer.windowFocusChanged(hasFocus);
     }
 
+    /**
+     * dispatchKeyEvent:Evento de android studio en ciclo de vida de la APP
+     *
+     * @param event
+     * @return Boolean
+     */
     // For some reason the multiple keyevent type is not supported by the ndk.
     // Force event injection by overriding dispatchKeyEvent().
     @Override
@@ -83,23 +112,49 @@ public class UnityPlayerActivity extends Activity {// don't change the name of t
         return super.dispatchKeyEvent(event);
     }
 
+    /**
+     * onKeyUP:Evento de android studio en ciclo de vida de la APP
+     *
+     * @param keyCode
+     * @param event
+     * @return Boolean
+     */
     // Pass any events not handled by (unfocused) views straight to UnityPlayer
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
         return mUnityPlayer.injectEvent(event);
     }
 
+    /**
+     * onKeyDown: Evento de android studio en ciclo de vida de la APP
+     *
+     * @param keyCode
+     * @param event
+     * @return Boolean
+     */
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         return mUnityPlayer.injectEvent(event);
     }
 
+    /**
+     * onTuochEven: eventos al tacto con la pantalla
+     *
+     * @param event
+     * @return Boolean
+     */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         return mUnityPlayer.injectEvent(event);
     }
-
     /*API12*/
+
+    /**
+     * onGenericMotionEvent:Evento de android studio en ciclo de vida de la APP
+     *
+     * @param event
+     * @return Boolean
+     */
     public boolean onGenericMotionEvent(MotionEvent event) {
         return mUnityPlayer.injectEvent(event);
     }

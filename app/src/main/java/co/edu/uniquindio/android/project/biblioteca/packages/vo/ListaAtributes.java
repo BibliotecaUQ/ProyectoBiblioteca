@@ -2,8 +2,10 @@ package co.edu.uniquindio.android.project.biblioteca.packages.vo;
 
 
 /**
- * clase personajes , en esta clase se tienen los atributos que deben tener los personajes como nombre, desripcion , y una imagne.
+ * clase Lista de atributos contenidos en el JSon, en esta clase se tienen los atributos que deben tener los eventos como nombre,
+ * desripcion , y  una imagen.
  * contiene metodos de estos atributos getters y setters
+ *
  * @author jhoan sebastian gomez medina
  * @author john sebastian agudelo ospina
  */
@@ -18,26 +20,20 @@ public class ListaAtributes {
 
     /**
      * Constructor de noticias que inicializa los dos primeros atributos
-     * @param   nombre de la noticia
+     *
+     * @param nombre      de la noticia
      * @param descripcion detalle de la noticia
-     *@param imagen imagen de la noticia
+     * @param imagen      imagen de la noticia
      */
     public ListaAtributes(String nombre, String descripcion, int imagen) {
         this.Nombre = nombre;
         this.Descripcion = descripcion;
-        this.imagen=imagen;
+        this.imagen = imagen;
     }
 
-
     /**
-     *  Metodo para obtener el nombre del personaje
-     * @return nombre del personaje
-     */
-    public String getNombre() {
-        return Nombre;
-    }
-    /**
-     * Metodo para dar nombre al personaje
+     * Metodo para obtener el nombre
+     *
      * @return imagen dela noticia
      */
     public void setNombre(String nombre) {
@@ -45,7 +41,8 @@ public class ListaAtributes {
     }
 
     /**
-     *  Metodo para obtener la imagen del personaje
+     * Metodo para obtener la imagen
+     *
      * @return
      */
     public int getImagen() {
@@ -53,15 +50,16 @@ public class ListaAtributes {
     }
 
     /**
-     *  Metodo para poner la imagen del personaje
-     * @param imagen del personaje mostrado
+     * Metodo para poner la imagen
+     *
+     * @param imagen
      */
     public void setImagen(int imagen) {
         this.imagen = imagen;
     }
 
     /**
-     *  Metodo para obtener la descripcion del personaje
+     * Metodo para obtener la descripcion
      *
      * @return
      */
@@ -70,7 +68,8 @@ public class ListaAtributes {
     }
 
     /**
-     *  Metodo para obtener la descripcion del personaje
+     * Metodo para obtener la descripcion
+     *
      * @param descripcion
      */
     public void setDescripcion(String descripcion) {

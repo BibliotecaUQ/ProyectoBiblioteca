@@ -1,29 +1,42 @@
 package co.edu.uniquindio.android.project.biblioteca.actividades.actividades;
 
+import android.util.JsonReader;
+
 import junit.framework.TestCase;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+
+import java.io.BufferedInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.List;
 
-import co.edu.uniquindio.android.project.biblioteca.packages.actividades.LocalizarActivity;
+import co.edu.uniquindio.android.project.biblioteca.packages.vo.JSONReader;
 
 /**
- * Created by Pc on 14/04/2017.
+ * Clase Junit
  */
 
 @RunWith(JUnit4.class)
 public class NavegationActivityTest extends TestCase {
 
+    /**
+     * probarConexionURLJSon
+     *
+     * @throws Exception
+     */
     @Test
     public void probarConexionURLJSon() throws Exception {
         String urljson = "https://bibliotecauq.github.io/data.json";
         try {
             URL temp = null;
-            // https://bibliotecauq.github.io/data.json
             URL url = new URL(urljson);
             URLConnection urlConnection = (HttpURLConnection) url.openConnection();
             temp = urlConnection.getURL();
@@ -33,48 +46,34 @@ public class NavegationActivityTest extends TestCase {
         }
     }
 
+    /**
+     * probarJSon
+     *
+     * @throws Exception
+     */
     @Test
-    public void probarLocalizar() throws Exception {
-        LocalizarActivity localizarActivity = new LocalizarActivity();
-        assertEquals(localizarActivity.localizar("5"),1.0);
+    public void probarJSon() throws Exception {
+        List list_contenido_json;
+        HttpURLConnection urlConnection;
+        JsonReader reader;
+        try {
+            // https://bibliotecauq.github.io/data.json
+            String urljson = "https://bibliotecauq.github.io/data.json";
+            URL url = new URL(urljson);
+            urlConnection = (HttpURLConnection) url.openConnection();
+            //temp = urlConnection.getResponseMessage();
+            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+            reader = new JsonReader(new InputStreamReader(in, "UTF-8"));
+            JSONReader cJSONReader = new JSONReader();
+            try {
+                list_contenido_json = cJSONReader.readJSONMsg(reader);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            assertTrue(cJSONReader != null);
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
     }
-
-    @Test
-    public void probarLocalizar2() throws Exception {
-        LocalizarActivity localizarActivity = new LocalizarActivity();
-        assertEquals(localizarActivity.localizar("qW"),15.0);
-    }
-
-    @Test
-    public void probarCoordenadas() throws Exception {
-        LocalizarActivity localizarActivity = new LocalizarActivity();
-        double[] verdadero ={0.207, 0.86};
-        double[] resultado= localizarActivity.coordenadas(1.0);
-        assertEquals(verdadero[0],resultado[0]);
-        assertEquals(verdadero[1],resultado[1]);
-    }
-
-    @Test
-    public void probagGeneral() throws Exception {
-        LocalizarActivity localizarActivity = new LocalizarActivity();
-        assertEquals(localizarActivity.localizarGeneral(5),1.0);
-    }
-
-    @Test
-    public void probagMedicina() throws Exception {
-        LocalizarActivity localizarActivity = new LocalizarActivity();
-        assertEquals(localizarActivity.localizarMedicina("wq"),16.0);
-    }
-
-    @Test
-    public void probagMedicina2() throws Exception {
-        LocalizarActivity localizarActivity = new LocalizarActivity();
-        assertEquals(localizarActivity.localizarMedicina("q"),15.0);
-    }
-
-
-
-
-
-
 }

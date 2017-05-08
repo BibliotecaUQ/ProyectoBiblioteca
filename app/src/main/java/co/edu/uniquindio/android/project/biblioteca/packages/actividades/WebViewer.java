@@ -1,6 +1,5 @@
 package co.edu.uniquindio.android.project.biblioteca.packages.actividades;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -16,6 +15,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
 
 /**
@@ -26,16 +27,17 @@ import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
  */
 public class WebViewer extends AppCompatActivity {
 
-    //Variable para actualizar
-   // private SwipeRefreshLayout swipeContainer;
     //Variable Web view
     private WebView WebView;
 
-    //metodo oncreate
+    /**
+     * metodo onCreate, en este metodo se instancia el layout que se debe iniciar y sus correspondientes confguraciones
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.web_view);
+        ButterKnife.bind(this);
 
         WebView = (WebView) this.findViewById(R.id.web_view);
         WebView.loadUrl("http://uniquindio.metabiblioteca.org/");
@@ -46,52 +48,60 @@ public class WebViewer extends AppCompatActivity {
         getSupportActionBar().setTitle("Catálogo de Biblioteca");
     }
 
-    //accion atras en toolbar
+    /**
+     * Metodo que adiciona el Toolbar que contiene accion atras en toolbar
+     */
     private void atras() {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
-    //accion atras en toolbar
+    /**
+     * accion atras en toolbar
+     */
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return false;
     }
 
-    //opciones del menu puestas en el toolbar
+    /**
+     * opciones del menu puestas en el toolbar
+     *
+     * @param menu
+     * @return Boolean
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Infla el menu.
         getMenuInflater().inflate(R.menu.menu_wv, menu);
         return true;
-
     }
-    //seleccion de las opciones del menu
 
+    /**
+     * seleccion de las opciones del menu
+     *
+     * @param item
+     * @return Boolean
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_1:
                 Log.i("ActionBar", "Nuevo!");
                 if (!verificaConexion(getBaseContext())) {
-
-                    Toast toast2 = Toast.makeText(getApplicationContext(), "No tienes conexión a internet", Toast.LENGTH_LONG);
-                    toast2.show();
+                    Toast.makeText(getApplicationContext(), R.string.alerta_conexion, Toast.LENGTH_LONG).show();
                 } else {
-
                     WebView = (WebView) this.findViewById(R.id.web_view);
                     WebView.loadUrl("http://uniquindio.metabiblioteca.org/");
                     WebView.setWebViewClient(new WebViewClient());
                     WebSettings webSettings = WebView.getSettings();
                     webSettings.setJavaScriptEnabled(true);
-
                 }
                 return true;
 
             case R.id.menu_2:
                 Log.i("ActionBar", "Buscar!");
-
 
                 if (!verificaConexion(getBaseContext())) {
                     Toast toast2 = Toast.makeText(getApplicationContext(), "No tienes conexión a internet", Toast.LENGTH_LONG);
@@ -104,7 +114,6 @@ public class WebViewer extends AppCompatActivity {
                 return true;
 
             case R.id.menu_3:
-                Log.i("ActionBar", "Settings!");
                 String ur = "http://uniquindio.metabiblioteca.org/";
                 if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.HONEYCOMB) {
                     android.text.ClipboardManager clipboard = (android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
@@ -113,8 +122,7 @@ public class WebViewer extends AppCompatActivity {
                     android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                     android.content.ClipData clip = android.content.ClipData.newPlainText("Copied Text", ur);
                     clipboard.setPrimaryClip(clip);
-                    Toast toast2 = Toast.makeText(getApplicationContext(), "Copiado al Portapapeles", Toast.LENGTH_LONG);
-                    toast2.show();
+                    Toast.makeText(getApplicationContext(), R.string.mensaje_texto_copiado, Toast.LENGTH_LONG).show();
                 }
                 return true;
 
@@ -144,5 +152,4 @@ public class WebViewer extends AppCompatActivity {
         }
         return bConectado;
     }
-
 }

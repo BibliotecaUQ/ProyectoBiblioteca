@@ -26,18 +26,22 @@ public class JSONReader {
     public String img2 = "";
 
 
+    /**
+     * Método que lee apartado a apartado dentro del JSON
+     *
+     * @param reader
+     * @return
+     * @throws IOException
+     */
     //Método que lee apartado a apartado dentro del JSON
     public List readJSONMsg(JsonReader reader) throws IOException {
         //Lista de camaras
         List Array_json = new ArrayList();
         reader.beginObject();
-
         while (reader.hasNext()) {
-
             String name = reader.nextName();
             if ("Proyecto".equals(name)) {
-                //Estamos en el array de
-
+                //Esta en el array del JSon
                 reader.beginArray();
                 reader.beginObject();
                 while (reader.hasNext()) {
@@ -47,12 +51,10 @@ public class JSONReader {
                         setEvent(Event);
                         Array_json.add(Event);
                     }
-
                     if ("Descripcion".equals(object)) {
                         Descrip = reader.nextString();
                         Array_json.add(Descrip);
                     }
-
                     if ("image".equals(object)) {
                         img = reader.nextString();
                         setImg(img);
@@ -65,9 +67,7 @@ public class JSONReader {
                     if ("Descripcion2".equals(object)) {
                         Descrip2 = reader.nextString();
                         Array_json.add(Descrip2);
-
                     }
-
                     if ("image2".equals(object)) {
                         img2 = reader.nextString();
                         Array_json.add(img2);
@@ -84,31 +84,61 @@ public class JSONReader {
         return Array_json;
     }
 
+    /**
+     * metodo get
+     *
+     * @return String
+     */
     //metodo get
     public String getEvent() {
         return Event;
     }
 
+    /**
+     * metodo set
+     *
+     * @param event
+     */
     //metodo set
     public void setEvent(String event) {
         Event = event;
     }
 
+    /**
+     * metodo get
+     *
+     * @return String
+     */
     //metodo get
     public String getDescrip() {
         return Descrip;
     }
 
+    /**
+     * metodo set
+     *
+     * @param event
+     */
     //metodo set
     public void setDescrip(String descrip) {
         Descrip = descrip;
     }
 
+    /**
+     * metodo get
+     *
+     * @return String
+     */
     //metodo get
     public String getImg() {
         return img;
     }
 
+    /**
+     * metodo set
+     *
+     * @param event
+     */
     //metodo set
     public void setImg(String img) {
         this.img = img;

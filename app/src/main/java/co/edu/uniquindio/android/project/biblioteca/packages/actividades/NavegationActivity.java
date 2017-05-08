@@ -31,6 +31,8 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import co.edu.uniquindio.android.project.biblioteca.packages.fragmentos.HomeFragment;
 import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
 import co.edu.uniquindio.android.project.biblioteca.packages.vo.JSONReader;
@@ -44,18 +46,19 @@ import co.edu.uniquindio.android.project.biblioteca.packages.vo.JSONReader;
  * @author john sebastian agudelo ospina
  */
 public class NavegationActivity extends AppCompatActivity {
+
+    @BindView(R.id.drawer_layout)
     public DrawerLayout drawerLayout;
-
-
     //URL Enlace a datos
-    // https://proyectcrainew.000webhostapp.com/document.json
-
     private static String urljson = "https://bibliotecauq.github.io/data.json";
     //TextView
-    private TextView mens;
-    private TextView desc;
+    @BindView(R.id.nombre_Evento)
+    public TextView mens;
+    @BindView(R.id.descripcion_evento)
+    public TextView desc;
     //ImageView
-    private ImageView img;
+    @BindView(R.id.image_evento)
+    public ImageView img;
     //JSON reader
     private JsonReader reader;
     //Listado contenido del Json
@@ -63,11 +66,14 @@ public class NavegationActivity extends AppCompatActivity {
     //Variable Bitmap que contendra la imagen del Json
     private Bitmap imagen;
     private Bitmap imagen2;
-    private TextView nom_ev;
-    private TextView desc_ev;
-    private ImageView img_ev;
+    @BindView(R.id.nombre_Ev)
+    public TextView nom_ev;
+    @BindView(R.id.descripcion_ev)
+    public TextView desc_ev;
+    @BindView(R.id.image_ev)
+    public ImageView img_ev;
+    private HttpURLConnection urlConnection;
 
-    private HttpURLConnection urlConnection ;
     /**
      * Este metodo contiene el metodo dde opciones del menu, ademas
      * de que se encarga de crear la vista del layout principal de la navegacion. cada opcion del menu realiza un accion distinta.
@@ -78,33 +84,19 @@ public class NavegationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navegation);
-
-
+        ButterKnife.bind(this);
         if (!verificaConexion(getBaseContext())) {
-            mens = (TextView) findViewById(R.id.nombre_Evento);
-            desc = (TextView) findViewById(R.id.descripcion_evento);
-            img = (ImageView) findViewById(R.id.image_evento);
-
-          //  Toast toast = Toast.makeText(getApplicationContext(), "No es posible actualizar", Toast.LENGTH_LONG);
-            // toast.show();
-            Toast toast2 = Toast.makeText(getApplicationContext(), "No tienes conexión a internet", Toast.LENGTH_LONG);
-            toast2.show();
-
-            mens.setText("Bienvenidos a la aplicación móvil paseo virtual CRAI");
-            desc.setText("No tienes conexión a internet, prueba la opción actualizar del menú");
+            Toast.makeText(getApplicationContext(), R.string.alerta_conexion, Toast.LENGTH_LONG).show();
+            mens.setText(R.string.saludo_bienvenida);
+            desc.setText(R.string.alerta_conexion_internet);
             img.setImageResource(R.drawable.crai_acerca_de);
-
-
         } else {
-
-            //Se Lanza la peticion de consulta Json
+            //Se Lanza la peticion de consulta Json en la clase Asyntask
             new JSONParse().execute();
-
         }
 
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_nav_menu);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         NavigationView navView = (NavigationView) findViewById(R.id.navview);
         navView.setItemIconTintList(null);
 
@@ -125,8 +117,6 @@ public class NavegationActivity extends AppCompatActivity {
                 //Fragment f = null;
                 switch (item.getItemId()) {
                     case R.id.menu_seccion_1:
-                        //remplazarFragmentohome(new HomeFragment());
-                        //Toast.makeText(getApplicationContext(), "localizar libro", Toast.LENGTH_LONG).show();
                         remplazarActivity(new LocalizarActivity());
                         break;
 
@@ -140,8 +130,7 @@ public class NavegationActivity extends AppCompatActivity {
 
                     case R.id.menu_opcion_1:
                         if (!verificaConexion(getApplicationContext())) {
-                            Toast toast = Toast.makeText(getApplicationContext(), "No tienes conexión a internet", Toast.LENGTH_SHORT);
-                            toast.show();
+                            Toast.makeText(getApplicationContext(), R.string.alerta_conexion, Toast.LENGTH_SHORT).show();
                         } else {
                             remplazarActivity(new WebViewer());
                         }
@@ -150,9 +139,7 @@ public class NavegationActivity extends AppCompatActivity {
 
                     case R.id.menu_opcion_2:
                         if (!verificaConexion(getBaseContext())) {
-                            Toast toast2 = Toast.makeText(getApplicationContext(), "No tienes conexión a internet", Toast.LENGTH_LONG);
-                            toast2.show();
-
+                            Toast.makeText(getApplicationContext(), R.string.alerta_conexion, Toast.LENGTH_SHORT).show();
                         } else {
                             //Se Lanza la peticion de consulta Json
                             new JSONParse().execute();
@@ -161,9 +148,7 @@ public class NavegationActivity extends AppCompatActivity {
 
                     case R.id.menu_opcion_3:
                         //Sale de la activity principal
-                       //Intent salida = new Intent(Intent.ACTION_MAIN);
                         finish();
-
                         break;
                     default: //nothing
                 }
@@ -172,9 +157,7 @@ public class NavegationActivity extends AppCompatActivity {
                 return true;
             }
         });
-
     }
-
 
     /**
      * metodo que define verdadero o falso dependiento de si se
@@ -194,7 +177,6 @@ public class NavegationActivity extends AppCompatActivity {
                 drawerLayout.openDrawer(GravityCompat.START);
                 return true;
             default://nothing
-
         }
         return super.onOptionsItemSelected(item);
     }
@@ -242,30 +224,29 @@ public class NavegationActivity extends AppCompatActivity {
     }
 
     /**
-     * Servicios restfull
+     * Servicios rest-full
      * Class que realizará de forma asíncrona(BackGround) la consulta a la dirección HTTP donde se encuentra el archivo Json
      */
     private class JSONParse extends AsyncTask<String, String, JsonReader> {
-
-
+        /**
+         * onPreExecute:Evento de android studio en ciclo de vida de la APP e cuanto a procesar información
+         */
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            mens = (TextView) findViewById(R.id.nombre_Evento);
-            desc = (TextView) findViewById(R.id.descripcion_evento);
-            img = (ImageView) findViewById(R.id.image_evento);
-
-            nom_ev = (TextView) findViewById(R.id.nombre_Ev);
-            desc_ev = (TextView) findViewById(R.id.descripcion_ev);
-            img_ev = (ImageView) findViewById(R.id.image_ev);
         }
 
+        /**
+         * doInBackground:Evento de android studio en ciclo de vida de la APP e cuanto a procesar información
+         *
+         * @param args
+         * @return
+         */
         //Este metodo realizará la conexión devolviendo el JSON
         @Override
         protected JsonReader doInBackground(String... args) {
 
             try {
-
                 // https://bibliotecauq.github.io/data.json
                 URL url = new URL(urljson);
                 urlConnection = (HttpURLConnection) url.openConnection();
@@ -273,10 +254,8 @@ public class NavegationActivity extends AppCompatActivity {
                 InputStream in = new BufferedInputStream(urlConnection.getInputStream());
                 reader = new JsonReader(new InputStreamReader(in, "UTF-8"));
                 JSONReader cJSONReader = new JSONReader();
-
                 try {
                     list_contenido_json = cJSONReader.readJSONMsg(reader);
-
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -289,13 +268,15 @@ public class NavegationActivity extends AppCompatActivity {
                 e.printStackTrace();
             } finally {
                 if (urlConnection != null) urlConnection.disconnect();
-
-
             }
             return reader;
-
         }
 
+        /**
+         * onPostExecute:Evento de android studio en ciclo de vida de la APP e cuanto a procesar información
+         *
+         * @param reader
+         */
         @Override
         protected void onPostExecute(JsonReader reader) {
             mens.setText("" + list_contenido_json.get(0));
@@ -331,7 +312,6 @@ public class NavegationActivity extends AppCompatActivity {
         }
         return bm;
     }
-
 }
 
 
