@@ -100,11 +100,9 @@ public class WebViewer extends AppCompatActivity {
                 return true;
 
             case R.id.menu_2:
-                Log.i("ActionBar", "Buscar!");
+                  if (!verificaConexion(getBaseContext())) {
+                    Toast.makeText(getApplicationContext(), R.string.alerta_conexion, Toast.LENGTH_LONG).show();
 
-                if (!verificaConexion(getBaseContext())) {
-                    Toast toast2 = Toast.makeText(getApplicationContext(), "No tienes conexión a internet", Toast.LENGTH_LONG);
-                    toast2.show();
                 } else {
                     Uri uri = Uri.parse("http://uniquindio.metabiblioteca.org/");
                     Intent intent = new Intent(Intent.ACTION_VIEW, uri);
