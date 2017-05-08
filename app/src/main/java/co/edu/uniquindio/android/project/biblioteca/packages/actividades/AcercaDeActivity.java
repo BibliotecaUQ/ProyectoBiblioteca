@@ -18,7 +18,7 @@ import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
  */
 
 public class AcercaDeActivity extends AppCompatActivity {
-
+   
     //textview usados en la vista
     public TextView creada_por;
     public TextView autor_1;
