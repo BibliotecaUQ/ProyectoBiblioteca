@@ -65,12 +65,7 @@ public class NavegationActivityTest extends TestCase {
             InputStream in = new BufferedInputStream(urlConnection.getInputStream());
             reader = new JsonReader(new InputStreamReader(in, "UTF-8"));
             JSONReader cJSONReader = new JSONReader();
-            try {
-                List list_contenido_json = cJSONReader.readJSONMsg(reader);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            assertTrue(cJSONReader != null);
+            assertTrue(cJSONReader.readJSONMsg(reader) != null);
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
