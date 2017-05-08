@@ -14,7 +14,7 @@ public class ListaAtributes {
     /**
      * Constructor de contacto que inicializa los dos primeros atributos
      */
-    private String Nombre;
+   // private String Nombre;
     private String Descripcion;
     private int imagen;
 
@@ -26,7 +26,7 @@ public class ListaAtributes {
      * @param imagen      imagen de la noticia
      */
     public ListaAtributes(String nombre, String descripcion, int imagen) {
-        this.Nombre = nombre;
+        //this.Nombre = nombre;
         this.Descripcion = descripcion;
         this.imagen = imagen;
     }
@@ -36,9 +36,9 @@ public class ListaAtributes {
      *
      * @return imagen dela noticia
      */
-    public void setNombre(String nombre) {
-        Nombre = nombre;
-    }
+   // public void setNombre(String nombre) {
+   //     Nombre = nombre;
+   // }
 
     /**
      * Metodo para obtener la imagen

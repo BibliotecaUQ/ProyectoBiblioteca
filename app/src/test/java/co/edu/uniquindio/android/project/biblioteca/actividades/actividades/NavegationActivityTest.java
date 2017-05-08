@@ -53,7 +53,7 @@ public class NavegationActivityTest extends TestCase {
      */
     @Test
     public void probarJSon() throws Exception {
-        List list_contenido_json;
+
         HttpURLConnection urlConnection;
         JsonReader reader;
         try {
@@ -66,7 +66,7 @@ public class NavegationActivityTest extends TestCase {
             reader = new JsonReader(new InputStreamReader(in, "UTF-8"));
             JSONReader cJSONReader = new JSONReader();
             try {
-                list_contenido_json = cJSONReader.readJSONMsg(reader);
+                List list_contenido_json = cJSONReader.readJSONMsg(reader);
             } catch (IOException e) {
                 e.printStackTrace();
             }
