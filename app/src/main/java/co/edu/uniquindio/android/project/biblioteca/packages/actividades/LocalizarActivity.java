@@ -79,7 +79,8 @@ public class LocalizarActivity extends AppCompatActivity {
     public double[] coordenadas(double estante) {
         int x = (int) estante;
         // x | y
-        double[][] porcentaje = {{0.207, 0.86},
+        double[][] porcentaje = {
+                {0.207, 0.86},
                 {0.207, 0.802},
                 {0.207, 0.745},
                 {0.207, 0.685},

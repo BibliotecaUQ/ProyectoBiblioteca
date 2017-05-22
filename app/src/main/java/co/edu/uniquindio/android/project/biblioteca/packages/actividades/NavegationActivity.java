@@ -2,6 +2,7 @@ package co.edu.uniquindio.android.project.biblioteca.packages.actividades;
 
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -73,6 +74,7 @@ public class NavegationActivity extends AppCompatActivity {
     @BindView(R.id.image_ev)
     public ImageView img_ev;
     private HttpURLConnection urlConnection;
+    private ProgressDialog progressDialog;
 
     /**
      * Este metodo contiene el metodo dde opciones del menu, ademas
@@ -228,12 +230,18 @@ public class NavegationActivity extends AppCompatActivity {
      * Class que realizará de forma asíncrona(BackGround) la consulta a la dirección HTTP donde se encuentra el archivo Json
      */
     private class JSONParse extends AsyncTask<String, String, JsonReader> {
+
         /**
          * onPreExecute:Evento de android studio en ciclo de vida de la APP e cuanto a procesar información
          */
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+            progressDialog = new ProgressDialog(NavegationActivity.this);
+            progressDialog.setMessage("Cargando");
+            progressDialog.setIndeterminate(false);
+            progressDialog.setCancelable(true);
+            progressDialog.show();
         }
 
         /**
@@ -286,6 +294,10 @@ public class NavegationActivity extends AppCompatActivity {
             nom_ev.setText("" + list_contenido_json.get(3));
             desc_ev.setText("" + list_contenido_json.get(4));
             img_ev.setImageBitmap(imagen2);
+
+            if (progressDialog.isShowing()){
+                progressDialog.dismiss();
+            }
         }
     }
 
