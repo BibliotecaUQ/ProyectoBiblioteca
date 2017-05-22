@@ -53,9 +53,10 @@ public class LocalizarActivity extends AppCompatActivity {
                     ImageView im = (ImageView) findViewById(R.id.im);
                      im.setImageDrawable(getResources().getDrawable(R.drawable.location));
                     ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) im.getLayoutParams();
+
                     int x = getResources().getDrawable(R.drawable.biblioteca).getIntrinsicHeight();
                     int y = getResources().getDrawable(R.drawable.biblioteca).getIntrinsicWidth();
-                    Log.v("resultado", String.valueOf(x) + " " + String.valueOf(y));
+                    //Log.v("resultado", String.valueOf(x) + " " + String.valueOf(y));
                     lp.leftMargin = (int) ((x + 130) * coordenadas[0]);
                     lp.topMargin = (int) ((y - 210) * coordenadas[1]);
                     //lp.leftMargin = x + 130;
