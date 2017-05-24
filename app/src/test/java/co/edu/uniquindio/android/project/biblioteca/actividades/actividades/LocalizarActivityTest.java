@@ -34,7 +34,7 @@ public class LocalizarActivityTest extends TestCase {
     @Test
     public void probarLocalizar2() throws Exception {
         LocalizarActivity localizarActivity = new LocalizarActivity();
-        assertEquals(localizarActivity.localizar("qW"), 15.0);
+        assertEquals(localizarActivity.localizar("qW"), 17.0);
     }
 
     /**
@@ -57,7 +57,7 @@ public class LocalizarActivityTest extends TestCase {
      * @throws Exception
      */
     @Test
-    public void probagGeneral() throws Exception {
+    public void probarGeneral() throws Exception {
         LocalizarActivity localizarActivity = new LocalizarActivity();
         assertEquals(localizarActivity.localizarGeneral(5), 1.0);
     }
@@ -68,9 +68,9 @@ public class LocalizarActivityTest extends TestCase {
      * @throws Exception
      */
     @Test
-    public void probagMedicina() throws Exception {
+    public void probarMedicina() throws Exception {
         LocalizarActivity localizarActivity = new LocalizarActivity();
-        assertEquals(localizarActivity.localizarMedicina("wq"), 16.0);
+        assertEquals(localizarActivity.localizarMedicina("wq"), 18.0);
     }
 
     /**
@@ -79,8 +79,19 @@ public class LocalizarActivityTest extends TestCase {
      * @throws Exception
      */
     @Test
-    public void probagMedicina2() throws Exception {
+    public void probarMedicina2() throws Exception {
         LocalizarActivity localizarActivity = new LocalizarActivity();
-        assertEquals(localizarActivity.localizarMedicina("q"), 15.0);
+        assertEquals(localizarActivity.localizarMedicina("q"), 17.0);
+    }
+
+    /**
+     * probagDiccionarios
+     *
+     * @throws Exception
+     */
+    @Test
+    public void probarDiccionarios() throws Exception {
+        LocalizarActivity localizarActivity = new LocalizarActivity();
+        assertEquals(localizarActivity.localizarDiccionario("r5"), 19.0);
     }
 }

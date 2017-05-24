@@ -131,7 +131,7 @@ public class LocalizarActivity extends AppCompatActivity {
      * @param cadena código a localizar
      * @return id del estante
      */
-    private double localizarDiccionario(String cadena) {
+    public double localizarDiccionario(String cadena) {
         //Diccionarios
         Pattern patR = Pattern.compile("^(r|R).*");
         if (patR.matcher(cadena).matches()) {
