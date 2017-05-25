@@ -1,7 +1,5 @@
 package co.edu.uniquindio.android.project.biblioteca.packages.actividades;
 
-import com.unity3d.player.*;
-
 import android.app.Activity;
 import android.content.res.Configuration;
 import android.graphics.PixelFormat;
@@ -9,6 +7,8 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.Window;
+
+import com.unity3d.player.UnityPlayer;
 
 /**
  * clase principal donde se tiene el manejo de la realida aumentada para el paseo virtual

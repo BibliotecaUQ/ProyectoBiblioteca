@@ -1,13 +1,9 @@
 package co.edu.uniquindio.android.project.biblioteca.packages.actividades;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.Toast;
-
-import co.edu.uniquindio.android.project.biblioteca.packagesAR.BuildConfig;
 
 import static co.edu.uniquindio.android.project.biblioteca.packagesAR.R.drawable;
 
