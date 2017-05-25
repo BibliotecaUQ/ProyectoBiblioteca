@@ -56,8 +56,8 @@ public class LocalizarActivity extends AppCompatActivity {
                     int x = getResources().getDrawable(R.drawable.biblioteca).getIntrinsicHeight();
                     int y = getResources().getDrawable(R.drawable.biblioteca).getIntrinsicWidth();
                     //Log.v("resultado", String.valueOf(x) + " " + String.valueOf(y));
-                    lp.leftMargin = (int) ((x + 130) * coordenadas[0]);
-                    lp.topMargin = (int) ((y - 210) * coordenadas[1]);
+                    lp.leftMargin = (int) ((x + 110) * coordenadas[0]);
+                    lp.topMargin = (int) ((y - 180) * coordenadas[1]);
                     //lp.leftMargin = x + 130;
                     //lp.topMargin = y - 210;
                 } else {
@@ -83,15 +83,15 @@ public class LocalizarActivity extends AppCompatActivity {
                 {0.207, 0.802},
                 {0.207, 0.745},
                 {0.207, 0.685},
-                {0.207, 0.627},
-                {0.207, 0.511},
-                {0.207, 0.456},
-                {0.207, 0.396},
-                {0.207, 0.346},
-                {0.207, 0.291},
-                {0.207, 0.236},
-                {0.207, 0.18},
-                {0.207, 0.12},
+                {0.207, 0.632},
+                {0.207, 0.520},
+                {0.207, 0.466},
+                {0.207, 0.406},
+                {0.207, 0.356},
+                {0.207, 0.301},
+                {0.207, 0.246},
+                {0.207, 0.20},
+                {0.207, 0.14},
                 {0.031, 0.461},
                 {0.535, 0.298},//15
                 {0.592, 0.625},
