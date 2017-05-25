@@ -10,12 +10,12 @@ import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.JsonReader;
 import android.view.MenuItem;
 import android.widget.ImageView;
@@ -35,8 +35,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import co.edu.uniquindio.android.project.biblioteca.packages.fragmentos.HomeFragment;
-import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
 import co.edu.uniquindio.android.project.biblioteca.packages.vo.JSONReader;
+import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
 
 
 /**

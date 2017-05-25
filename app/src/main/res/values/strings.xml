@@ -23,7 +23,7 @@
     <string name="localizar_libro">Localizar Libro</string>
 
     <string name="saludo_bienvenida">Bienvenido a la aplicación móvil paseo virtual CRAI</string>
-    <string name="alerta_conexion_internet">No tienes conexión a internet, prueba la opción actualizar del menú</string>
+    <string name="alerta_conexion_internet">No tienes conexión a internet, algunas funcionalidades podrían no responder. Prueba la opción Actualizar del menú</string>
     <string name="alerta_conexion">No tienes conexión a internet</string>
 
     <string name="mensaje_error_localizar_libros">Ingrese un código válido</string>
