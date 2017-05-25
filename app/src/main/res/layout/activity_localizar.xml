@@ -86,10 +86,10 @@
                     android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/biblioteca"
-                    android:layout_width="fill_parent"
+                    android:id="@+id/base"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/biblioteca_localizar"
+                    android:src="@drawable/base"
                     android:layout_gravity="fill|top"
                     android:scaleType="fitXY"
                     android:layout_marginTop="4dp"
@@ -97,8 +97,22 @@
                     android:gravity="center"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
-                    android:paddingLeft="1dp"
-                    />
+                    android:paddingLeft="1dp"/>
+
+
+                    <ImageView
+                        android:id="@+id/biblioteca"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/biblioteca_localizar"
+                        android:layout_gravity="fill|top"
+
+                        android:layout_marginTop="4dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:paddingLeft="1dp"/>
+
+
 
                     <ImageView
                         android:id="@+id/im"

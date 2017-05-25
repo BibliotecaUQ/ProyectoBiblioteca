@@ -1,23 +1,15 @@
 package co.edu.uniquindio.android.project.biblioteca.packages.actividades;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import java.io.IOException;
-import java.io.InterruptedIOException;
+import co.edu.uniquindio.android.project.biblioteca.packagesAR.BuildConfig;
 
-import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
-
-import static co.edu.uniquindio.android.project.biblioteca.packagesAR.R.*;
+import static co.edu.uniquindio.android.project.biblioteca.packagesAR.R.drawable;
 
 /**
  * Actividad perteneciente al codigo generado por el proceo realizado en Unity
@@ -44,11 +36,24 @@ public class UnityPlayerNativeActivity extends UnityPlayerActivity {
                 @Override
                 public void onClick(View view) {
                     onDestroy();
+                    if (getFirstTimeRun()==1)Toast.makeText(getApplicationContext(),"ya estaba"+getFirstTimeRun(), Toast.LENGTH_SHORT).show();
+
 
                 }
             });
             mUnityPlayer.addView(sampleButton, new ViewGroup.LayoutParams( ViewGroup.LayoutParams.WRAP_CONTENT,  ViewGroup.LayoutParams.WRAP_CONTENT));
             sampleButton.bringToFront();
 
+    }
+
+
+    private int getFirstTimeRun() {
+        SharedPreferences sp = getSharedPreferences("MYAPP", 0);
+        int result, currentVersionCode = BuildConfig.VERSION_CODE;
+        int lastVersionCode = sp.getInt("FIRSTTIMERUN", -1);
+        if (lastVersionCode == -1) result = 0; else
+            result = (lastVersionCode == currentVersionCode) ? 1 : 2;
+        sp.edit().putInt("FIRSTTIMERUN", currentVersionCode).apply();
+        return result;
     }
 }

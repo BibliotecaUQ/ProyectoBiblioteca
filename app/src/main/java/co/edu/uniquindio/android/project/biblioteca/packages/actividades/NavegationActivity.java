@@ -237,11 +237,13 @@ public class NavegationActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+            /*
             progressDialog = new ProgressDialog(NavegationActivity.this);
             progressDialog.setMessage("Cargando");
             progressDialog.setIndeterminate(false);
             progressDialog.setCancelable(true);
             progressDialog.show();
+            */
         }
 
         /**
@@ -294,11 +296,11 @@ public class NavegationActivity extends AppCompatActivity {
             nom_ev.setText("" + list_contenido_json.get(3));
             desc_ev.setText("" + list_contenido_json.get(4));
             img_ev.setImageBitmap(imagen2);
-
+/*
             if (progressDialog.isShowing()){
                 progressDialog.dismiss();
             }
-        }
+ */       }
     }
 
     /**
