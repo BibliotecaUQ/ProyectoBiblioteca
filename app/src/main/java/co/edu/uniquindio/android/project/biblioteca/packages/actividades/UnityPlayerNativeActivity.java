@@ -36,9 +36,6 @@ public class UnityPlayerNativeActivity extends UnityPlayerActivity {
                 @Override
                 public void onClick(View view) {
                     onDestroy();
-                    if (getFirstTimeRun()==1)Toast.makeText(getApplicationContext(),"ya estaba"+getFirstTimeRun(), Toast.LENGTH_SHORT).show();
-
-
                 }
             });
             mUnityPlayer.addView(sampleButton, new ViewGroup.LayoutParams( ViewGroup.LayoutParams.WRAP_CONTENT,  ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -47,13 +44,4 @@ public class UnityPlayerNativeActivity extends UnityPlayerActivity {
     }
 
 
-    private int getFirstTimeRun() {
-        SharedPreferences sp = getSharedPreferences("MYAPP", 0);
-        int result, currentVersionCode = BuildConfig.VERSION_CODE;
-        int lastVersionCode = sp.getInt("FIRSTTIMERUN", -1);
-        if (lastVersionCode == -1) result = 0; else
-            result = (lastVersionCode == currentVersionCode) ? 1 : 2;
-        sp.edit().putInt("FIRSTTIMERUN", currentVersionCode).apply();
-        return result;
-    }
 }
