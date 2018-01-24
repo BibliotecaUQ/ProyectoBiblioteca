@@ -47,22 +47,12 @@ public class LocalizarActivity extends AppCompatActivity {
                 inputMethodManager.hideSoftInputFromWindow(search.getWindowToken(), 0);
                 String cadena = search.getText().toString();
                 double resultado = localizar(cadena);
+                ImageView image = (ImageView) findViewById(R.id.biblioteca);
+                //image.setImageDrawable(null);
                 if (resultado != -1.0) {
-                    double[] coordenadas = coordenadas(resultado);
-                    ImageView im = (ImageView) findViewById(R.id.im);
-                    im.setImageDrawable(getResources().getDrawable(R.drawable.location));
-                    ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) im.getLayoutParams();
-
-                    int x = getResources().getDrawable(R.drawable.biblioteca).getIntrinsicHeight();
-                    int y = getResources().getDrawable(R.drawable.biblioteca).getIntrinsicWidth();
-                    //Log.v("resultado", String.valueOf(x) + " " + String.valueOf(y));
-                    lp.leftMargin = (int) ((x + 110) * coordenadas[0]);
-                    lp.topMargin = (int) ((y - 180) * coordenadas[1]);
-                    //lp.leftMargin = x + 130;
-                    //lp.topMargin = y - 210;
+                    setImage(resultado,image);
                 } else {
-                    ImageView im = (ImageView) findViewById(R.id.im);
-                    im.setImageDrawable(null);
+                    image.setImageDrawable(getResources().getDrawable(R.drawable.biblioteca_localizar0));
                     Toast.makeText(getApplicationContext(), R.string.mensaje_error_localizar_libros, Toast.LENGTH_LONG).show();
                 }
             }
@@ -70,37 +60,55 @@ public class LocalizarActivity extends AppCompatActivity {
     }
 
     /**
-     * Método que contiene las coordenadas correspondientes a cada estante
-     *
-     * @param estante id del estante
-     * @return coordenadas x y y
+     * Método que cambia la imagen de fondo según el estante
+     * @param resultado : Número del estante
+     * @param image : Variable imagen
      */
-    public double[] coordenadas(double estante) {
-        int x = (int) estante;
-        // x | y
-        double[][] porcentaje = {
-                {0.207, 0.86},
-                {0.207, 0.802},
-                {0.207, 0.745},
-                {0.207, 0.685},
-                {0.207, 0.632},
-                {0.207, 0.520},
-                {0.207, 0.466},
-                {0.207, 0.406},
-                {0.207, 0.356},
-                {0.207, 0.301},
-                {0.207, 0.246},
-                {0.207, 0.20},
-                {0.207, 0.14},
-                {0.031, 0.461},
-                {0.535, 0.298},//15
-                {0.592, 0.625},
-                {0.89, 0.30},
-                {0.89, 0.63},
-                {0.502, 0.637}};
-        double[] coordenadas = {porcentaje[x - 1][0], porcentaje[x - 1][1]};
-        return coordenadas;
+    private void setImage(double resultado, ImageView image) {
+        if(resultado == 1.0)
+            image.setImageDrawable(getResources().getDrawable(R.drawable.biblioteca_localizar1));
+        else if (resultado == 2.0)
+            image.setImageDrawable(getResources().getDrawable(R.drawable.biblioteca_localizar2));
+        else if (resultado == 3.0)
+            image.setImageDrawable(getResources().getDrawable(R.drawable.biblioteca_localizar3));
+        else if (resultado == 4.0)
+            image.setImageDrawable(getResources().getDrawable(R.drawable.biblioteca_localizar4));
+        else if (resultado == 5.0)
+            image.setImageDrawable(getResources().getDrawable(R.drawable.biblioteca_localizar5));
+        else if (resultado == 6.0)
+            image.setImageDrawable(getResources().getDrawable(R.drawable.biblioteca_localizar6));
+        else if (resultado == 7.0)
+            image.setImageDrawable(getResources().getDrawable(R.drawable.biblioteca_localizar7));
+        else if (resultado == 8.0)
+            image.setImageDrawable(getResources().getDrawable(R.drawable.biblioteca_localizar8));
+        else if (resultado == 9.0)
+            image.setImageDrawable(getResources().getDrawable(R.drawable.biblioteca_localizar9));
+        else if (resultado == 10.0)
+            image.setImageDrawable(getResources().getDrawable(R.drawable.biblioteca_localizar10));
+        else if (resultado == 11.0)
+            image.setImageDrawable(getResources().getDrawable(R.drawable.biblioteca_localizar11));
+        else if (resultado == 12.0)
+            image.setImageDrawable(getResources().getDrawable(R.drawable.biblioteca_localizar12));
+        else if (resultado == 13.0)
+            image.setImageDrawable(getResources().getDrawable(R.drawable.biblioteca_localizar13));
+        else if (resultado == 14.0)
+            image.setImageDrawable(getResources().getDrawable(R.drawable.biblioteca_localizar14));
+        else if (resultado == 15.0)
+            image.setImageDrawable(getResources().getDrawable(R.drawable.biblioteca_localizar15));
+        else if (resultado == 16.0)
+            image.setImageDrawable(getResources().getDrawable(R.drawable.biblioteca_localizar16));
+        else if (resultado == 17.0)
+            image.setImageDrawable(getResources().getDrawable(R.drawable.biblioteca_localizar17));
+        else if (resultado == 18.0)
+            image.setImageDrawable(getResources().getDrawable(R.drawable.biblioteca_localizar18));
+        else if (resultado == 19.0)
+            image.setImageDrawable(getResources().getDrawable(R.drawable.biblioteca_localizar19));
+        else if (resultado == 20.0)
+            image.setImageDrawable(getResources().getDrawable(R.drawable.biblioteca_localizar20));
+        else if (resultado == 21.0)
+            image.setImageDrawable(getResources().getDrawable(R.drawable.biblioteca_localizar_r));
     }
+
 
     /**
      * Método que indentifica que tipo de código es y ejecuta el método correspondiente
@@ -138,7 +146,7 @@ public class LocalizarActivity extends AppCompatActivity {
             try {
                 double num = Double.parseDouble(numero);
                 if(num>=0.0 && num<=950.0)
-                    return 19.0;
+                    return 21.0;
                 else
                     return -1.0;
             } catch (NumberFormatException nfe) {
@@ -157,22 +165,24 @@ public class LocalizarActivity extends AppCompatActivity {
      */
     public double localizarGeneral(double n) {
         // id estante | lado A
-        Double[][] estantes = {{1.0, 1.0, 5.276},
-                {2.0, 5.277, 307.76},
-                {3.0, 307.77, 339.0},
-                {4.0, 339.1, 364.3},
-                {5.0, 364.36, 396.0},
-                {6.0, 396.1, 511.8},
-                {7.0, 511.9, 519.53},
-                {8.0, 519.54, 546.0},
-                {9.0, 546.1, 621.381},
-                {10.0, 621.382, 628.1688},
-                {11.0, 628.1689, 657.76},
-                {12.0, 657.77, 664.0},
-                {13.0, 664.1, 698.1},
-                {14.0, 698.2, 799.0},
-                {15.0, 800.0, 899.0},
-                {16.0, 900., 990.0}};
+        Double[][] estantes = {{1.0, 1.3, 5.19},
+                {2.0, 5.2, 158.7},
+                {3.0, 158.8, 306.4},
+                {4.0, 306.5, 338.479},
+                {5.0, 338.480, 354.7},
+                {6.0, 354.8, 372.21},
+                {7.0, 372.22, 428.1},
+                {8.0, 428.2, 515.15},
+                {9.0, 515.16, 531.0},
+                {10.0, 531.0, 574.19},
+                {11.0, 574.20, 613.69},
+                {12.0, 613.7, 624.15},
+                {13.0, 624.15, 657.0},
+                {14.0, 657.1, 659.3},
+                {15.0, 700.0, 799.260},
+                {16.0, 660.0, 698.1},
+                {17.0, 800., 899.0},
+                {18.0, 900.0, 990.0},};
         for (Double[] fila : estantes) {
             if (fila[1] <= n && fila[2] >= n) {
                 return fila[0];
@@ -191,9 +201,9 @@ public class LocalizarActivity extends AppCompatActivity {
         Pattern patQ = Pattern.compile("^(q|Q)[A-Za-z]?[1-9]*");
         Pattern patW = Pattern.compile("^(w|W)[A-Za-z]?[1-9]*");
         if (patQ.matcher(cadena).matches()) {
-            return 17.0;
+            return 19.0;
         } else if (patW.matcher(cadena).matches()) {
-            return 18.0;
+            return 20.0;
         }
         return -1.0;
     }

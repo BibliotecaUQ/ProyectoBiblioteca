@@ -19,10 +19,10 @@ import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
 public class AcercaDeActivity extends AppCompatActivity {
 
     //Views usados en el Loyout correspondiente
-    @BindView(R.id.creada_por)
-    public TextView creada_por;
-    @BindView(R.id.autor_1)
-    public TextView autor_1;
+    //@BindView(R.id.creada_por)
+   // public TextView creada_por;
+    //@BindView(R.id.autor_1)
+    //public TextView autor_1;
     @BindView(R.id.autor_2)
     public TextView autor_2;
     @BindView(R.id.creada_anio)
@@ -49,8 +49,8 @@ public class AcercaDeActivity extends AppCompatActivity {
     private void asignarElementosLayout() {
         //Se define lo que va a cotener cada view que componen el Layout
         image.setImageResource(R.drawable.crai_acerca_de);
-        creada_por.setText(R.string.creada_por);
-        autor_1.setText(R.string.autor_1);
+        //creada_por.setText(R.string.creada_por);
+        //autor_1.setText(R.string.autor_1);
         autor_2.setText(R.string.autor_2);
         creada_anio.setText(R.string.creada_anio);
     }

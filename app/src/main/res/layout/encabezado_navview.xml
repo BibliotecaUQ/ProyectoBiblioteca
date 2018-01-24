@@ -11,18 +11,8 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:src="@drawable/logo_menu"
+            android:src="@drawable/menu_banner"
             android:scaleType="centerCrop" />
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/circle_image"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginBottom="4dp"
-            android:layout_gravity="right|bottom"
-            android:src="@drawable/crai"
-            app:border_color="@android:color/white"
-            app:border_width="1dp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

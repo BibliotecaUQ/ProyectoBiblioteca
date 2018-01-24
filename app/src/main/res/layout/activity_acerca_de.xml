@@ -25,35 +25,17 @@
 
 
             <TextView
-                android:id="@+id/creada_por"
+                android:id="@+id/titleabout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="7dp"
                 android:layout_marginTop="7dp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textStyle="bold"
+                android:textStyle="italic"
                 android:textSize="@dimen/detalle_texto_nombre"
+                android:text="Paseo Virtual v1.2"
                 />
-
-            <TextView
-                android:id="@+id/autor_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="@dimen/activity_horizontal_margin"
-                android:maxLines="30"
-                android:textSize="@dimen/tamanio_texto_detalle" />
-            <TextView
-                android:id="@+id/and"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="@dimen/activity_horizontal_margin"
-                android:maxLines="30"
-                android:text="Y"
-                android:gravity="center"
-                android:textSize="@dimen/tamanio_texto_detalle" />
             <TextView
                 android:id="@+id/autor_2"
                 android:layout_width="wrap_content"
@@ -62,7 +44,15 @@
                 android:layout_margin="@dimen/activity_horizontal_margin"
                 android:maxLines="30"
                 android:textSize="@dimen/tamanio_texto_detalle" />
-
+            <TextView
+                android:id="@+id/info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:maxLines="30"
+                android:gravity="center"
+                android:textSize="@dimen/tamanio_texto_detalle" />
             <TextView
                 android:id="@+id/creada_anio"
                 android:layout_width="wrap_content"
