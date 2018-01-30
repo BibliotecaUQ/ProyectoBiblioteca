@@ -25,13 +25,17 @@ public class AcercaDeActivity extends AppCompatActivity {
     //public TextView autor_1;
     @BindView(R.id.autor_2)
     public TextView autor_2;
+    @BindView(R.id.info)
+    public TextView info;
     @BindView(R.id.creada_anio)
     public TextView creada_anio;
-    @BindView(R.id.imagen_detalle)
-    public ImageView image;
+    @BindView(R.id.version)
+    public TextView version;
+    //@BindView(R.id.imagen_detalle)
+    //public ImageView image;
 
     /**
-     * aca se crea la vista dela layout correspondiente a la clase.
+     * aca se crea la vista del layout correspondiente a la clase.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,7 @@ public class AcercaDeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_acerca_de);
         ButterKnife.bind(this);
         atras();
+        getSupportActionBar().setTitle("Acerca De..");
         asignarElementosLayout();
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
@@ -48,9 +53,11 @@ public class AcercaDeActivity extends AppCompatActivity {
      */
     private void asignarElementosLayout() {
         //Se define lo que va a cotener cada view que componen el Layout
-        image.setImageResource(R.drawable.crai_acerca_de);
+        //image.setImageResource(R.drawable.acerca_titulo);
         //creada_por.setText(R.string.creada_por);
         //autor_1.setText(R.string.autor_1);
+        info.setText(R.string.info);
+        version.setText(R.string.version);
         autor_2.setText(R.string.autor_2);
         creada_anio.setText(R.string.creada_anio);
     }

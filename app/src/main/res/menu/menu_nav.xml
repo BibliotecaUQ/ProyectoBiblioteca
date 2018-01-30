@@ -26,6 +26,10 @@
                 android:icon="@drawable/pageview"
                 android:title="@string/Consulta_tus_libros_en_línea" />
             <item
+                android:id="@+id/menu_opcion_4"
+                android:icon="@drawable/feedback"
+                android:title="@string/comentarios" />
+            <item
             android:id="@+id/menu_opcion_2"
             android:icon="@drawable/actualizar"
             android:title="@string/actualizar_página_principal" />

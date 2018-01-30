@@ -77,7 +77,7 @@ public class NavegationActivity extends AppCompatActivity {
     private ProgressDialog progressDialog;
 
     /**
-     * Este metodo contiene el metodo dde opciones del menu, ademas
+     * Este metodo contiene el metodo de opciones del menu, ademas
      * de que se encarga de crear la vista del layout principal de la navegacion. cada opcion del menu realiza un accion distinta.
      *
      * @param savedInstanceState
@@ -91,7 +91,7 @@ public class NavegationActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), R.string.alerta_conexion, Toast.LENGTH_LONG).show();
             mens.setText(R.string.saludo_bienvenida);
             desc.setText(R.string.alerta_conexion_internet);
-            img.setImageResource(R.drawable.crai_acerca_de);
+            img.setImageResource(R.drawable.oops);
         } else {
             //Se Lanza la peticion de consulta Json en la clase Asyntask
             new JSONParse().execute();
@@ -146,6 +146,15 @@ public class NavegationActivity extends AppCompatActivity {
                             //Se Lanza la peticion de consulta Json
                             new JSONParse().execute();
                         }
+                        break;
+
+                    case R.id.menu_opcion_4:
+                        if (!verificaConexion(getApplicationContext())) {
+                            Toast.makeText(getApplicationContext(), R.string.alerta_conexion, Toast.LENGTH_SHORT).show();
+                        } else {
+                            remplazarActivity(new CommentViewer());
+                        }
+
                         break;
 
                     case R.id.menu_opcion_3:
@@ -327,6 +336,3 @@ public class NavegationActivity extends AppCompatActivity {
         return bm;
     }
 }
-
-
-

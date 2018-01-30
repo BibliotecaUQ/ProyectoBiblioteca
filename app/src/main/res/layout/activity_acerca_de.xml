@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ImageView
+    <!--ImageView
         android:id="@+id/imagen_detalle"
-        android:layout_width="match_parent"
+        android:layout_width="0.5dp"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="0.4" /-->
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -32,9 +33,11 @@
                 android:layout_marginBottom="7dp"
                 android:layout_marginTop="7dp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textStyle="italic"
+                android:textStyle="bold"
                 android:textSize="@dimen/detalle_texto_nombre"
-                android:text="Paseo Virtual v1.2"
+                android:textColor="@color/colorPrimaryDark"
+                android:typeface="serif"
+                android:text="Paseo Virtual"
                 />
             <TextView
                 android:id="@+id/autor_2"
@@ -42,6 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="@dimen/activity_horizontal_margin"
+                android:typeface="serif"
                 android:maxLines="30"
                 android:textSize="@dimen/tamanio_texto_detalle" />
             <TextView
@@ -53,6 +57,16 @@
                 android:maxLines="30"
                 android:gravity="center"
                 android:textSize="@dimen/tamanio_texto_detalle" />
+            <TextView
+                android:id="@+id/version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:maxLines="30"
+                android:gravity="center"
+                android:textSize="@dimen/tamanio_texto_detalle"
+                android:textColor="@color/colorSecondaryText"/>
             <TextView
                 android:id="@+id/creada_anio"
                 android:layout_width="wrap_content"
