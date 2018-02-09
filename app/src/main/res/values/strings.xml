@@ -22,8 +22,7 @@
     <string name="mensaje_error_localizar_libros">Ingrese un código válido</string>
     <string name="info">Como dependencia la Biblioteca C.R.A.I tenemos la función de proveer, desarrollar recursos y servicios de información para la comunidad UNIQUINDIANA contribuyendo a su desarrollo personal, académico e investigativo.</string>
     <string name="mensaje_texto_copiado">Copiado al Portapapeles</string>
-    <string name="version">Versión 1.2 </string>
+    <string name="version">Versión 1.0 </string>
     <string name="comentarios">Comentarios</string>
-
 </resources>
 

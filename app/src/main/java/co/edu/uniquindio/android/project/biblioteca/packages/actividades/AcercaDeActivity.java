@@ -3,7 +3,6 @@ package co.edu.uniquindio.android.project.biblioteca.packages.actividades;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import butterknife.BindView;
@@ -18,11 +17,6 @@ import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
  */
 public class AcercaDeActivity extends AppCompatActivity {
 
-    //Views usados en el Loyout correspondiente
-    //@BindView(R.id.creada_por)
-   // public TextView creada_por;
-    //@BindView(R.id.autor_1)
-    //public TextView autor_1;
     @BindView(R.id.autor_2)
     public TextView autor_2;
     @BindView(R.id.info)
@@ -31,8 +25,6 @@ public class AcercaDeActivity extends AppCompatActivity {
     public TextView creada_anio;
     @BindView(R.id.version)
     public TextView version;
-    //@BindView(R.id.imagen_detalle)
-    //public ImageView image;
 
     /**
      * aca se crea la vista del layout correspondiente a la clase.
@@ -43,7 +35,7 @@ public class AcercaDeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_acerca_de);
         ButterKnife.bind(this);
         atras();
-        getSupportActionBar().setTitle("Acerca De..");
+        getSupportActionBar().setTitle("Acerca De");
         asignarElementosLayout();
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
@@ -52,10 +44,6 @@ public class AcercaDeActivity extends AppCompatActivity {
      * Elementos mostrados en el layout
      */
     private void asignarElementosLayout() {
-        //Se define lo que va a cotener cada view que componen el Layout
-        //image.setImageResource(R.drawable.acerca_titulo);
-        //creada_por.setText(R.string.creada_por);
-        //autor_1.setText(R.string.autor_1);
         info.setText(R.string.info);
         version.setText(R.string.version);
         autor_2.setText(R.string.autor_2);

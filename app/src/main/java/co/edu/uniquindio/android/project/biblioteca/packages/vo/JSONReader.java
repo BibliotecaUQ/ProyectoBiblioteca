@@ -114,11 +114,7 @@ public class JSONReader {
         return Descrip;
     }
 
-    /**
-     * metodo set
-     *
-     * @param event
-     */
+
     //metodo set
     public void setDescrip(String descrip) {
         Descrip = descrip;
@@ -134,11 +130,7 @@ public class JSONReader {
         return img;
     }
 
-    /**
-     * metodo set
-     *
-     * @param event
-     */
+
     //metodo set
     public void setImg(String img) {
         this.img = img;

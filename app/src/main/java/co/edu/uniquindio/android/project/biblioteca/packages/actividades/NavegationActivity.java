@@ -21,7 +21,8 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,7 +32,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
-
+import android.webkit.WebViewClient;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import co.edu.uniquindio.android.project.biblioteca.packages.fragmentos.HomeFragment;
@@ -75,7 +76,7 @@ public class NavegationActivity extends AppCompatActivity {
     public ImageView img_ev;
     private HttpURLConnection urlConnection;
     private ProgressDialog progressDialog;
-
+    private WebView WebView;
     /**
      * Este metodo contiene el metodo de opciones del menu, ademas
      * de que se encarga de crear la vista del layout principal de la navegacion. cada opcion del menu realiza un accion distinta.
@@ -89,12 +90,17 @@ public class NavegationActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         if (!verificaConexion(getBaseContext())) {
             Toast.makeText(getApplicationContext(), R.string.alerta_conexion, Toast.LENGTH_LONG).show();
-            mens.setText(R.string.saludo_bienvenida);
-            desc.setText(R.string.alerta_conexion_internet);
-            img.setImageResource(R.drawable.oops);
+            WebView = (WebView) this.findViewById(R.id.home_view);
+            WebView.loadUrl("file:///android_asset/home.html");
+            WebView.setWebViewClient(new WebViewClient());
+            WebSettings webSettings = WebView.getSettings();
+            webSettings.setJavaScriptEnabled(true);
         } else {
-            //Se Lanza la peticion de consulta Json en la clase Asyntask
-            new JSONParse().execute();
+            WebView = (WebView) this.findViewById(R.id.home_view);
+            WebView.loadUrl("https://bibliotecauq.github.io/home");
+            WebView.setWebViewClient(new WebViewClient());
+            WebSettings webSettings = WebView.getSettings();
+            webSettings.setJavaScriptEnabled(true);
         }
 
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_nav_menu);
@@ -144,7 +150,7 @@ public class NavegationActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), R.string.alerta_conexion, Toast.LENGTH_SHORT).show();
                         } else {
                             //Se Lanza la peticion de consulta Json
-                            new JSONParse().execute();
+                            //new JSONParse().execute();
                         }
                         break;
 

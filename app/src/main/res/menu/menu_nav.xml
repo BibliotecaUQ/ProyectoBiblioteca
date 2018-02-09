@@ -3,6 +3,10 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/menu_opcion_1"
+            android:icon="@drawable/pageview"
+            android:title="@string/Consulta_tus_libros_en_línea" />
+        <item
             android:id="@+id/menu_seccion_1"
             android:icon="@drawable/ubicacion"
             android:title="@string/Localizar_Libro" />
@@ -11,10 +15,6 @@
             android:id="@+id/menu_seccion_2"
             android:icon="@drawable/paseo_virtual"
             android:title="@string/Paseo_virtual" />
-        <item
-            android:id="@+id/menu_seccion_3"
-            android:icon="@drawable/acerca_de"
-            android:title="@string/Acerca_de" />
 
     </group>
     <item
@@ -22,9 +22,9 @@
         android:title="Más opciones">
         <menu>
             <item
-                android:id="@+id/menu_opcion_1"
-                android:icon="@drawable/pageview"
-                android:title="@string/Consulta_tus_libros_en_línea" />
+                android:id="@+id/menu_seccion_3"
+                android:icon="@drawable/acerca_de"
+                android:title="@string/Acerca_de" />
             <item
                 android:id="@+id/menu_opcion_4"
                 android:icon="@drawable/feedback"
