@@ -37,7 +37,7 @@
                 android:textSize="@dimen/detalle_texto_nombre"
                 android:textColor="@color/colorPrimaryDark"
                 android:typeface="serif"
-                android:text="Paseo Virtual"
+                android:text="CRAI-RA UQ"
                 />
             <TextView
                 android:id="@+id/autor_2"
