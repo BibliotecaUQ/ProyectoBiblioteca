@@ -75,7 +75,6 @@ public class NavegationActivity extends AppCompatActivity {
     @BindView(R.id.image_ev)
     public ImageView img_ev;
     private HttpURLConnection urlConnection;
-    private ProgressDialog progressDialog;
     private WebView WebView;
     /**
      * Este metodo contiene el metodo de opciones del menu, ademas
@@ -148,10 +147,10 @@ public class NavegationActivity extends AppCompatActivity {
                     case R.id.menu_opcion_2:
                         if (!verificaConexion(getBaseContext())) {
                             Toast.makeText(getApplicationContext(), R.string.alerta_conexion, Toast.LENGTH_SHORT).show();
-                        } else {
+                        } //else {
                             //Se Lanza la peticion de consulta Json
                             //new JSONParse().execute();
-                        }
+                        //}
                         break;
 
                     case R.id.menu_opcion_4:
