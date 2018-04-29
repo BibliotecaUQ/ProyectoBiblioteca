@@ -10,8 +10,7 @@ import static co.edu.uniquindio.android.project.biblioteca.packagesAR.R.drawable
 /**
  * Actividad perteneciente al codigo generado por el proceo realizado en Unity
  *
- * @author jhoan sebastian gomez medina
- * @author john sebastian agudelo ospina
+ * @author jonh sebastian agudelo ospina
  **/
 //@deprecated It's recommended that you base your code directly on UnityPlayerActivity or make your own NativeActitivty implementation.
 public class UnityPlayerNativeActivity extends UnityPlayerActivity {
@@ -27,7 +26,7 @@ public class UnityPlayerNativeActivity extends UnityPlayerActivity {
             ImageButton sampleButton = new ImageButton(UnityPlayerNativeActivity.this);
             sampleButton.getBackground().setAlpha(0);
             sampleButton.setBackgroundResource(0);
-            sampleButton.setImageResource(drawable.abc_ic_ab_back_mtrl_am_alpha);
+            sampleButton.setImageResource(drawable.abc_ic_ab_back_material);
             sampleButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

@@ -5,7 +5,7 @@
         <item
             android:id="@+id/menu_opcion_1"
             android:icon="@drawable/pageview"
-            android:title="@string/Consulta_tus_libros_en_línea" />
+            android:title="@string/Catalogo_biblioteca" />
         <item
             android:id="@+id/menu_seccion_1"
             android:icon="@drawable/ubicacion"
@@ -17,6 +17,34 @@
             android:title="@string/Paseo_virtual" />
 
     </group>
+    <item
+        android:id="@+id/navigation_atajos"
+        android:title="Atajos">
+        <menu>
+            <item
+                android:id="@+id/atajos_1"
+                android:icon="@drawable/ic_storage_black_24dp"
+                android:title="@string/db" />
+            <item
+                android:id="@+id/atajos_2"
+                android:icon="@drawable/ic_local_florist_black_24dp"
+                android:title="@string/ecotic" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/navigation_social"
+        android:title="Redes sociales">
+        <menu>
+            <item
+                android:id="@+id/social_1"
+                android:icon="@drawable/youtube"
+                android:title="@string/youtube" />
+            <item
+                android:id="@+id/social_2"
+                android:icon="@drawable/whatsapp"
+                android:title="@string/whats" />
+           </menu>
+    </item>
     <item
         android:id="@+id/navigation_subheader"
         android:title="Más opciones">
@@ -30,15 +58,11 @@
                 android:icon="@drawable/feedback"
                 android:title="@string/comentarios" />
             <item
-            android:id="@+id/menu_opcion_2"
-            android:icon="@drawable/actualizar"
-            android:title="@string/actualizar_página_principal" />
-            <item
                 android:id="@+id/menu_opcion_3"
                 android:icon="@drawable/close"
                 android:title="@string/salir" />
 
-           </menu>
+        </menu>
     </item>
 
 

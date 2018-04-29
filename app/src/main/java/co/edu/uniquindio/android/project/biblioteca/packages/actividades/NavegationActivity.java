@@ -2,15 +2,18 @@ package co.edu.uniquindio.android.project.biblioteca.packages.actividades;
 
 
 import android.app.Activity;
-import android.app.ProgressDialog;
+import android.app.NativeActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
@@ -51,6 +54,7 @@ public class NavegationActivity extends AppCompatActivity {
 
     @BindView(R.id.drawer_layout)
     public DrawerLayout drawerLayout;
+    private BottomNavigationView bottomNavigationView;
     //URL Enlace a datos
     private static String urljson = "https://bibliotecauq.github.io/data.json";
     //TextView
@@ -101,13 +105,11 @@ public class NavegationActivity extends AppCompatActivity {
             WebSettings webSettings = WebView.getSettings();
             webSettings.setJavaScriptEnabled(true);
         }
-
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_nav_menu);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         NavigationView navView = (NavigationView) findViewById(R.id.navview);
         navView.setItemIconTintList(null);
-
-
+        //navigation view
         remplazarFragmentohome(new HomeFragment());
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 
@@ -121,13 +123,13 @@ public class NavegationActivity extends AppCompatActivity {
              */
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
-                //Fragment f = null;
                 switch (item.getItemId()) {
                     case R.id.menu_seccion_1:
                         remplazarActivity(new LocalizarActivity());
                         break;
 
                     case R.id.menu_seccion_2:
+                        Toast.makeText(getApplicationContext(), R.string.escanear, Toast.LENGTH_SHORT).show();
                         remplazarActivity(new UnityPlayerNativeActivity());
                         break;
 
@@ -144,15 +146,6 @@ public class NavegationActivity extends AppCompatActivity {
 
                         break;
 
-                    case R.id.menu_opcion_2:
-                        if (!verificaConexion(getBaseContext())) {
-                            Toast.makeText(getApplicationContext(), R.string.alerta_conexion, Toast.LENGTH_SHORT).show();
-                        } //else {
-                            //Se Lanza la peticion de consulta Json
-                            //new JSONParse().execute();
-                        //}
-                        break;
-
                     case R.id.menu_opcion_4:
                         if (!verificaConexion(getApplicationContext())) {
                             Toast.makeText(getApplicationContext(), R.string.alerta_conexion, Toast.LENGTH_SHORT).show();
@@ -166,6 +159,46 @@ public class NavegationActivity extends AppCompatActivity {
                         //Sale de la activity principal
                         finish();
                         break;
+                    case R.id.atajos_1:
+                        if (!verificaConexion(getBaseContext())) {
+                            Toast.makeText(getApplicationContext(), R.string.alerta_conexion, Toast.LENGTH_LONG).show();
+
+                        } else {
+                            Uri uri = Uri.parse("https://www.uniquindio.edu.co/publicaciones/bases_de_datos_pub");
+                            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                            startActivity(intent);
+                        }
+                        break;
+                    case R.id.atajos_2:
+                        if (!verificaConexion(getBaseContext())) {
+                            Toast.makeText(getApplicationContext(), R.string.alerta_conexion, Toast.LENGTH_LONG).show();
+
+                        } else {
+                            Uri uri = Uri.parse("https://ecotic.uniquindio.edu.co/ecotic/#!/home");
+                            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                            startActivity(intent);
+                        }
+                        break;
+                    case R.id.social_1:
+                        if (!verificaConexion(getBaseContext())) {
+                            Toast.makeText(getApplicationContext(), R.string.alerta_conexion, Toast.LENGTH_LONG).show();
+
+                        } else {
+                            Uri uri = Uri.parse("https://www.youtube.com/c/JHDACRAI?sub_confirmation=1");
+                            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                            startActivity(intent);
+                        }
+                        break;
+                    case R.id.social_2:
+                        if (!verificaConexion(getBaseContext())) {
+                            Toast.makeText(getApplicationContext(), R.string.alerta_conexion, Toast.LENGTH_LONG).show();
+
+                        } else {
+                            Uri uri = Uri.parse("https://api.whatsapp.com/send?phone=573205064442");
+                            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                            startActivity(intent);
+                        }
+                        break;
                     default: //nothing
                 }
                 item.setChecked(true);
@@ -173,6 +206,49 @@ public class NavegationActivity extends AppCompatActivity {
                 return true;
             }
         });
+        bottomNavigationView = (BottomNavigationView) findViewById(R.id.bot_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.bot_inicio:
+                        if (!verificaConexion(getBaseContext())) {
+                            Toast.makeText(getApplicationContext(), R.string.alerta_conexion, Toast.LENGTH_LONG).show();
+                            WebView.loadUrl("file:///android_asset/home.html");
+                            WebView.setWebViewClient(new WebViewClient());
+                            WebSettings webSettings = WebView.getSettings();
+                            webSettings.setJavaScriptEnabled(true);
+                        } else {
+                            WebView.loadUrl("https://bibliotecauq.github.io/home");
+                            WebView.setWebViewClient(new WebViewClient());
+                            WebSettings webSettings = WebView.getSettings();
+                            webSettings.setJavaScriptEnabled(true);
+                        }
+                        break;
+                    case R.id.bot_localizar:
+                        remplazarActivity(new LocalizarActivity());
+                        break;
+
+                    case R.id.bot_recorrido:
+                        Toast.makeText(getApplicationContext(), R.string.escanear, Toast.LENGTH_SHORT).show();
+                        remplazarActivity(new UnityPlayerNativeActivity());
+                        break;
+
+                    case R.id.bot_catalogo:
+                        if (!verificaConexion(getApplicationContext())) {
+                            Toast.makeText(getApplicationContext(), R.string.alerta_conexion, Toast.LENGTH_SHORT).show();
+                        } else {
+                            remplazarActivity(new WebViewer());
+                        }
+
+                        break;
+
+                    default: //nothing
+
+                }
+                return false;
+            }
+        });
+
     }
 
     /**

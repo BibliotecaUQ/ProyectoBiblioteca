@@ -11,9 +11,7 @@ import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
 
 /**
  * Clase que contiene la información para mostrar información de la aplicacion y quienes la crearon
- *
- * @author jhoan sebastian gomez medina
- * @author john sebastian agudelo ospina
+ * @author jonh sebastian agudelo ospina
  */
 public class AcercaDeActivity extends AppCompatActivity {
 

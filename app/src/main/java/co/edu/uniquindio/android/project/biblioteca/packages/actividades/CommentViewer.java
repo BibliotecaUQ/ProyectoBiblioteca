@@ -21,7 +21,7 @@ import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
 /**
  * clase principal donde se tiene el manejo de la navegacion a la pagina web de comentarios
  *
- * @author john sebastian agudelo ospina
+ * @author jonh sebastian agudelo ospina
  */
 public class CommentViewer extends AppCompatActivity {
 

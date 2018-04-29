@@ -14,7 +14,6 @@ import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
  * <p>
  * A simple {@link Fragment} subclass.
  *
- * @author jhoan sebastian gomez medina
  * @author john sebastian agudelo ospina
  */
 public class HomeFragment extends Fragment {

@@ -6,15 +6,13 @@ android:
     # Update Android SDK Tools
     - tools
     - build-tools-25.0.0
-    - android-23
+    - android-25
     # Support library
     - extra-android-support
     - extra-android-m2repositor
 cache:
   directories:
   - "$HOME/.m2/repository"
-  - "$HOME/.sonar/cache"
-  - '$HOME/.sonar/cache'
  
 before_script: 
   - chmod +x gradlew

@@ -21,8 +21,7 @@ import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
 /**
  * clase principal donde se tiene el manejo de la navegacion a la pagina web del catalogo de biblioteca UQ
  *
- * @author jhoan sebastian gomez medina
- * @author john sebastian agudelo ospina
+ * @author jonh sebastian agudelo ospina
  */
 public class WebViewer extends AppCompatActivity {
 

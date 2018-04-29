@@ -8,8 +8,7 @@ import android.util.Log;
 /**
  * Actividad perteneciente a la parte de Realidad aumentada
  *
- * @author jhoan sebastian gomez medina
- * @author john sebastian agudelo ospina
+ * @author jonh sebastian agudelo ospina
  */
 
 //@deprecated Use UnityPlayerActivity instead.

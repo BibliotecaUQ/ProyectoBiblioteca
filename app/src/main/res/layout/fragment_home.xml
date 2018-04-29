@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     tools:context="co.edu.uniquindio.android.project.biblioteca.packages.fragmentos.HomeFragment">
 
-
     <FrameLayout
         android:id="@+id/content_frame"
         android:layout_width="match_parent"

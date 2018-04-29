@@ -13,8 +13,7 @@ import com.unity3d.player.UnityPlayer;
 /**
  * clase principal donde se tiene el manejo de la realida aumentada para el paseo virtual
  *
- * @author jhoan sebastian gomez medina
- * @author john sebastian agudelo ospina
+ * @author jonh sebastian agudelo ospina
  */
 public class UnityPlayerActivity extends Activity {// don't change the name of this variable; referenced from native code
     protected UnityPlayer mUnityPlayer;

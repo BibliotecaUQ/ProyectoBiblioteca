@@ -9,19 +9,16 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.regex.Pattern;
-
 import butterknife.ButterKnife;
 import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
 
 /**
- * /**
  * Actividad donde se define logica correspondiente a el caso de uso de localizar libro
  *
- * @author jhoan sebastian gomez medina
- * @author john sebastian agudelo ospina
+ * @author jonh sebastian agudelo ospina
  */
 public class LocalizarActivity extends AppCompatActivity {
     /**
@@ -47,12 +44,19 @@ public class LocalizarActivity extends AppCompatActivity {
                 String cadena = search.getText().toString();
                 double resultado = localizar(cadena);
                 ImageView image = (ImageView) findViewById(R.id.biblioteca);
-                //image.setImageDrawable(null);
+                TextView textResultado = (TextView) findViewById(R.id.label_resultado);
                 if (resultado != -1.0) {
                     setImage(resultado,image);
+                    Toast.makeText(getApplicationContext(), R.string.mensaje_exito_localizar_libros, Toast.LENGTH_LONG).show();
+                    int estante =(int) resultado;
+                    if(estante == 21)
+                        textResultado.setText("El libro "+cadena+ "se encuentra en el pasillo R.");
+                    else
+                        textResultado.setText("El libro "+cadena+ "se encuentra en el pasillo "+estante+".");
                 } else {
                     image.setImageDrawable(getResources().getDrawable(R.drawable.biblioteca_localizar0));
                     Toast.makeText(getApplicationContext(), R.string.mensaje_error_localizar_libros, Toast.LENGTH_LONG).show();
+                    textResultado.setText("Intente de nuevo.");
                 }
             }
         });
