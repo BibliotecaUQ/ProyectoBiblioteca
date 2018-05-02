@@ -26,7 +26,7 @@ public class UnityPlayerNativeActivity extends UnityPlayerActivity {
             ImageButton sampleButton = new ImageButton(UnityPlayerNativeActivity.this);
             sampleButton.getBackground().setAlpha(0);
             sampleButton.setBackgroundResource(0);
-            sampleButton.setImageResource(drawable.abc_ic_ab_back_material);
+            sampleButton.setImageResource(drawable.arrow_left);
             sampleButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
