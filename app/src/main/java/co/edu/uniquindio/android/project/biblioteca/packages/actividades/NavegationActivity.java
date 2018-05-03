@@ -2,7 +2,6 @@ package co.edu.uniquindio.android.project.biblioteca.packages.actividades;
 
 
 import android.app.Activity;
-import android.app.NativeActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -44,17 +43,14 @@ import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
 
 
 /**
- * clase principal donde se tiene el manejo de la navegación,
- * contiene las opciones a seleccionar del item, los fragmento utilizados y el layout principal
+ * clase principal donde se tiene el manejo de la navegación y el layout principal
  *
- * @author jhoan sebastian gomez medina
- * @author john sebastian agudelo ospina
+ * @author jonh sebastian agudelo ospina
  */
 public class NavegationActivity extends AppCompatActivity {
 
     @BindView(R.id.drawer_layout)
     public DrawerLayout drawerLayout;
-    private BottomNavigationView bottomNavigationView;
     //URL Enlace a datos
     private static String urljson = "https://bibliotecauq.github.io/data.json";
     //TextView
@@ -206,7 +202,7 @@ public class NavegationActivity extends AppCompatActivity {
                 return true;
             }
         });
-        bottomNavigationView = (BottomNavigationView) findViewById(R.id.bot_navigation);
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bot_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {

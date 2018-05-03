@@ -6,9 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.TextView;
-
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
 
@@ -18,8 +15,6 @@ import co.edu.uniquindio.android.project.biblioteca.packagesAR.R;
  */
 public class AcercaDeActivity extends AppCompatActivity {
 
-    //Variable Web view
-    private WebView WebView;
 
     /**
      * aca se crea la vista del layout correspondiente a la clase.
@@ -30,7 +25,7 @@ public class AcercaDeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_acerca_de);
         ButterKnife.bind(this);
 
-        WebView = (WebView) this.findViewById(R.id.about_view);
+        WebView WebView = (WebView) this.findViewById(R.id.about_view);
         WebView.loadUrl("file:///android_asset/about.html");
         WebView.setWebViewClient(new WebViewClient());
         WebSettings webSettings = WebView.getSettings();
