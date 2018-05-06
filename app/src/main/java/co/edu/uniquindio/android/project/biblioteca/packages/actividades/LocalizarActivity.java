@@ -143,18 +143,19 @@ public class LocalizarActivity extends AppCompatActivity {
      */
     public double localizarDiccionario(String cadena) {
         //Diccionarios
-        Pattern patR = Pattern.compile("^(r|R).*");
+        Pattern patR = Pattern.compile("^(r|R)-([0-9][0-9]?[0-9]?(\\.[0-9][0-9]*)?)?");
         if (patR.matcher(cadena).matches()) {
-            String numero=cadena.substring(1);
-            try {
-                double num = Double.parseDouble(numero);
-                if(num>=0.0 && num<=950.0)
-                    return 21.0;
-                else
-                    return -1.0;
-            } catch (NumberFormatException nfe) {
-                return -1.0;
-            }
+            //String numero=cadena.substring(2);
+            //try {
+             //   double num = Double.parseDouble(numero);
+              //  if(num>=0.0 && num<=950.0)
+               //    return 21.0;
+                //else
+                 //   return -1.0;
+            //} catch (NumberFormatException nfe) {
+             //   return -1.0;
+            //}
+            return 21.0;
         }
         else
             return -1.0;
@@ -201,8 +202,8 @@ public class LocalizarActivity extends AppCompatActivity {
      * @return id del estante
      */
     public double localizarMedicina(String cadena) {
-        Pattern patQ = Pattern.compile("^(q|Q)[A-Za-z]?[1-9]*");
-        Pattern patW = Pattern.compile("^(w|W)[A-Za-z]?[1-9]*");
+        Pattern patQ = Pattern.compile("^(q|Q)[A-Za-z]?([0-9][0-9]?[0-9]?(\\.[0-9][0-9]*)?)?");
+        Pattern patW = Pattern.compile("^(w|W)[A-Za-z]?([0-9][0-9]?[0-9]?(\\.[0-9][0-9]*)?)?");
         if (patQ.matcher(cadena).matches()) {
             return 19.0;
         } else if (patW.matcher(cadena).matches()) {

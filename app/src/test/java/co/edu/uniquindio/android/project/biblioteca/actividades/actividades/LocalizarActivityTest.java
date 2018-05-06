@@ -57,7 +57,7 @@ public class LocalizarActivityTest extends TestCase {
     @Test
     public void probarMedicina() throws Exception {
         LocalizarActivity localizarActivity = new LocalizarActivity();
-        assertEquals(localizarActivity.localizarMedicina("wq"), 20.0);
+        assertEquals(localizarActivity.localizarMedicina("wq300.45"), 20.0);
     }
 
     /**
@@ -68,7 +68,7 @@ public class LocalizarActivityTest extends TestCase {
     @Test
     public void probarMedicina2() throws Exception {
         LocalizarActivity localizarActivity = new LocalizarActivity();
-        assertEquals(localizarActivity.localizarMedicina("q"), 19.0);
+        assertEquals(localizarActivity.localizarMedicina("q34.345"), 19.0);
     }
 
     /**
@@ -79,6 +79,6 @@ public class LocalizarActivityTest extends TestCase {
     @Test
     public void probarDiccionarios() throws Exception {
         LocalizarActivity localizarActivity = new LocalizarActivity();
-        assertEquals(localizarActivity.localizarDiccionario("r5"), 21.0);
+        assertEquals(localizarActivity.localizarDiccionario("r-554.34"), 21.0);
     }
 }
