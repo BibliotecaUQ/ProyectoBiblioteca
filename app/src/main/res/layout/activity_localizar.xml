@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="8dp"
             android:textSize="8pt"
-            android:text="El libro 705.5 se encuentra en el pasillo 17."/>
+            android:text="El libro 705.5 se encuentra en el pasillo 15."/>
 
     </LinearLayout>
     <ScrollView
@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="fill|top"
                 android:paddingLeft="1dp"
-                android:src="@drawable/biblioteca_localizar17"
+                android:src="@drawable/biblioteca_localizar15"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true" />
